@@ -1,0 +1,32 @@
+.projects {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--spacing-gap);
+  }
+
+  li {
+    background: #eee;
+    padding: 1rem;
+    position: relative;
+
+    &:hover {
+      background: #ddd;
+    }
+  }
+
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    overflow: hidden;
+    text-indent: -9999px;
+    z-index: 0;
+  }
+}
