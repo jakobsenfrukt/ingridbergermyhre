@@ -59,5 +59,21 @@ export default {
       name: 'archive',
       type: 'boolean',
     },
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      archive: 'archive',
+      image: 'image',
+    },
+    prepare(selection) {
+      const { title, archive, image } = selection;
+
+      return {
+        title: title,
+        subtitle: `${archive === true ? '(archive)' : ''}`,
+        media: image,
+      };
+    },
+  },
 }
