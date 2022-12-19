@@ -9,12 +9,10 @@
   }
 
   li {
-    background: #eee;
-    padding: 1rem;
     position: relative;
 
     &:hover {
-      background: #ddd;
+      opacity: .9;
     }
   }
 
@@ -28,5 +26,23 @@
     overflow: hidden;
     text-indent: -9999px;
     z-index: 0;
+  }
+
+  @media (min-width: 800px) {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+
+      li {
+        .text {
+          padding-right: 3rem;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    ul {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }

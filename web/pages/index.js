@@ -26,7 +26,7 @@ const Home = ({ data }) => {
 export async function getStaticProps() {
   const data = await client.fetch(groq`{
     'home': *[_type == "home"][0],
-    'projects': *[_type == "project" && archive != true] | order(date desc),
+    'projects': *[_type == "project" && archive != true] | order(premiereDate desc),
   }`)
   return {
     props: { data }

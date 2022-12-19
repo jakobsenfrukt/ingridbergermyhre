@@ -10,6 +10,9 @@ export default function Layout({ children }) {
   function toggleMenu(){
     setShowMenu(!showMenu);
   }
+  function closeMenu(){
+    setShowMenu(false);
+  }
 
   return (
     <div className={styles.layout}>
@@ -27,16 +30,18 @@ export default function Layout({ children }) {
           <ul data-show={showMenu}>
             <li><Link href="/">Home</Link></li>
             <li><Link href="/about">About</Link></li>
+            <li><Link href="#contact" onClick={closeMenu}>Contact</Link></li>
           </ul>
         </nav>
       </header>
 
       <main className={styles.main}>{children}</main>
 
-      <footer className={styles.footer}>
-        This is a footer<br />
+      <footer id="contact" className={styles.footer}>
+        <h1>Contact</h1>
+        <p>This is a footer<br />
         with some contact info<br />
-        or something like that
+        or something like that</p>
       </footer>
     </div>
   );

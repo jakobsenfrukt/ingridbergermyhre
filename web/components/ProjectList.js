@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import styles from './projectList.module.scss'
+import Image from './Image'
 
 export default function ProjectList ({ projects }) {
   const [limit, setLimit] = useState(10);
@@ -11,23 +12,14 @@ export default function ProjectList ({ projects }) {
     <section className={styles.projects}>
       <ul>
       {projects.length > 0 && projects.slice(0, limit).map(
-        ({ _id, title = '', slug = '', date = '', intro, image }) =>
-          slug && (
-            <li key={_id}>
-              {/*image && <figure className={styles.thumb}>
-                <img
-                  src={urlFor(image)
-                    .width(400)
-                    .height(400)
-                    .url()}
-                  alt={image.alt}
-                />
-                  </figure>*/}
-              <div>
-                <p className="date">{new Date(date).toDateString()}</p>
-                <h2>{title}</h2>
-                {intro && <p>{intro}</p>}
-                <Link href="/projects/[slug]" as={`/projects/${slug.current}`}>
+        (project) =>
+          project.slug && (
+            <li key={project._id}>
+              {project.image && <Image image={project.image} />}
+              <div className={styles.text}>
+                <h2>{project.title}</h2>
+                {project.intro && <p>{project.intro}</p>}
+                <Link href="/projects/[slug]" as={`/projects/${project.slug.current}`}>
                   <span>More info</span>
                 </Link>
               </div>

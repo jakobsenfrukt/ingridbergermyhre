@@ -3,9 +3,10 @@ import client from '../../client'
 import Link from 'next/link'
 import Head from 'next/head'
 import Layout, {siteTitle} from '../../components/Layout'
+import DateList from '../../components/DateList'
+import Image from '../../components/Image'
 
-export default function Article ({data}) {
-  console.log(data)
+export default function Project ({data}) {
   return (
     <Layout>
       <Head>
@@ -15,23 +16,10 @@ export default function Article ({data}) {
 
       <section className="page page--project">
         <h1 className="page__title">{data.title}</h1>
-        {/*image && <figure className="page__image">
-          <img
-            src={urlFor(image)
-              .width(1200)
-              .url()}
-            alt={image.alt}
-          />
-            </figure>*/}
-        <p className="page__meta">{new Date(data.date).toDateString()}</p>
+        {data.image && <Image image={data.image} />}
+        {data.dates && <DateList dates={data.dates} />}
         <p className="lead">{data.intro}</p>
       </section>
-
-      <style jsx>{`
-        .page__meta {
-          font-size: 0.8rem;
-        }
-      `}</style>
     </Layout>
   )
 }
