@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Layout, { siteTitle } from '../components/Layout';
 
 const About = ({ data }) => {
-  console.log(data)
   return (
     <Layout>
       <Head>

@@ -5,7 +5,6 @@ import Layout, { siteTitle } from '../components/Layout';
 import ProjectList from '../components/ProjectList';
 
 const Home = ({ data }) => {
-  console.log(data)
   return (
     <Layout>
       <Head>
