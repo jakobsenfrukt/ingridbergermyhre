@@ -21,10 +21,21 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      title: 'Date',
-      name: 'date',
-      type: 'datetime',
+      title: 'Premiere date',
+      description: 'Used to sort projects in order of premiere date. Will not be shown on the public website.',
+      name: 'premiereDate',
+      type: 'date',
       validation: Rule => Rule.required(),
+    },
+    {
+      title: 'Dates',
+      name: 'dates',
+      type: 'array',
+      of: [
+        {
+          type: 'projectDate'
+        }
+      ]
     },
     {
       title: 'Main image',
@@ -46,12 +57,6 @@ export default {
       title: 'Intro',
       name: 'intro',
       type: 'text'
-    },
-    {
-      title: 'Ticket URL',
-      description: 'Paste the entire URL, including https:// etc.',
-      name: 'tickets',
-      type: 'string'
     },
     {
       title: 'Archive',

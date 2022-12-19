@@ -9,6 +9,9 @@ import home from './documents/home'
 import project from './documents/project'
 import about from './documents/about'
 
+// Import objects
+import projectDate from './objects/projectDate'
+
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -21,5 +24,7 @@ export default createSchema({
     home,
     project,
     about,
+    // objects
+    projectDate
   ]),
 })
