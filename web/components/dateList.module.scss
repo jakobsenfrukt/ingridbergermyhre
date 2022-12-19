@@ -1,15 +1,34 @@
 .dates {
   margin-bottom: 2rem;
 
+  h2 {
+    margin: 0 0 1em;
+  }
+
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: inline-block;
   }
 
   li {
     display: block;
     position: relative;
+    padding: .5rem 0;
+    border-top: 1px solid #ccc;
+
+    &:last-of-type {
+      border-bottom: 1px solid #ccc;
+    }
+
+    &.passed {
+      opacity: .5;
+    }
+
+    &.upcoming {
+      opacity: 1;
+    }
   }
 
   .date {

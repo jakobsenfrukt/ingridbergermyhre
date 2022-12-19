@@ -42,6 +42,9 @@ export default function Layout({ children }) {
         <p>This is a footer<br />
         with some contact info<br />
         or something like that</p>
+        <p>2 emails for caravan (name + role)</p>
+        <p>personal email</p>
+        <p>instagram?</p>
       </footer>
     </div>
   );

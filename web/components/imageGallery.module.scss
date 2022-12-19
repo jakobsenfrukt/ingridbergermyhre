@@ -1,0 +1,26 @@
+.gallery {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--spacing-gap);
+  }
+}
+
+@media (min-width: 800px) {
+  .gallery {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .gallery {
+    ul {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

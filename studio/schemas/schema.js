@@ -11,6 +11,7 @@ import about from './documents/about'
 
 // Import objects
 import projectDate from './objects/projectDate'
+import imageGallery from './objects/imageGallery'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -25,6 +26,7 @@ export default createSchema({
     project,
     about,
     // objects
-    projectDate
+    projectDate,
+    imageGallery
   ]),
 })

@@ -5,6 +5,7 @@ import Head from 'next/head'
 import Layout, {siteTitle} from '../../components/Layout'
 import DateList from '../../components/DateList'
 import Image from '../../components/Image'
+import ImageGallery from '../../components/ImageGallery'
 
 export default function Project ({data}) {
   return (
@@ -19,6 +20,7 @@ export default function Project ({data}) {
         {data.image && <Image image={data.image} />}
         {data.dates && <DateList dates={data.dates} />}
         <p className="lead">{data.intro}</p>
+        {data.imageGallery && <ImageGallery gallery={data.imageGallery} />}
       </section>
     </Layout>
   )

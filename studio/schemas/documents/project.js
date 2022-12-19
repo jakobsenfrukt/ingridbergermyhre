@@ -59,6 +59,11 @@ export default {
       type: 'text'
     },
     {
+      title: 'Image gallery',
+      name: 'imageGallery',
+      type: 'imageGallery'
+    },
+    {
       title: 'Archive',
       description: 'When this is on (green), the project is not visible on the public website.',
       name: 'archive',
