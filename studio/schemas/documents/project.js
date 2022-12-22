@@ -59,6 +59,11 @@ export default {
       type: 'text'
     },
     {
+      title: 'Body',
+      name: 'body',
+      type: 'body'
+    },
+    {
       title: 'Image gallery',
       name: 'imageGallery',
       type: 'imageGallery'
