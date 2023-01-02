@@ -2,6 +2,7 @@ import { defineConfig } from "sanity"
 import { deskTool } from 'sanity/desk'
 import schemas from './schemas/schema'
 import deskStructure from './deskStructure'
+import { colorInput } from "@sanity/color-input"
 
 export default defineConfig({
   title: "Ingrid Berger Myhre",
