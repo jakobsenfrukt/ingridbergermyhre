@@ -54,6 +54,14 @@ export default {
       ]
     },
     {
+      name: 'color',
+      title: 'Color',
+      type: 'color',
+      options: {
+        disableAlpha: true
+      }
+    },
+    {
       title: 'Intro',
       name: 'intro',
       type: 'text'

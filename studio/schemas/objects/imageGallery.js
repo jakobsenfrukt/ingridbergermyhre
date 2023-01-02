@@ -20,10 +20,7 @@ export default {
               title: 'Alternative text',
               description: 'Important for SEO and accessibility. Briefly describe what you see in the image as if to a blind person.',
               name: 'alt',
-              type: 'string',
-              options: {
-                isHighlighted: true,
-              }
+              type: 'string'
             }
           ]
         },
