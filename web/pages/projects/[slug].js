@@ -22,6 +22,7 @@ export default function Project ({data}) {
         {data.dates && <DateList dates={data.dates} />}
         <p className="lead">{data.intro}</p>
         {data.body && <PortableText value={data.body} />}
+        {data.credits && <div className="project-credits"><PortableText value={data.credits} /></div>}
         {data.imageGallery && <ImageGallery gallery={data.imageGallery} />}
       </section>
     </Layout>

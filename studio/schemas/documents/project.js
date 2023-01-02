@@ -72,6 +72,11 @@ export default {
       type: 'body'
     },
     {
+      title: 'Credits',
+      name: 'credits',
+      type: 'body'
+    },
+    {
       title: 'Image gallery',
       name: 'imageGallery',
       type: 'imageGallery'

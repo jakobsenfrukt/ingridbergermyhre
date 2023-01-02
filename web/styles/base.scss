@@ -33,7 +33,7 @@ body {
     'YTLC' 560, /* 416 to 570 – lowercase height */
     'YTUC' 720, /* 528 to 760 – uppercase height */
     'YTAS' 850, /* 649 to 854 – ascender height */
-    'YTDE' -200, /* -305 to -98 */
+    'YTDE' -280, /* -305 to -98 - descender height */
     'YTFI' 600; /* 560 to 788 */
 
   /* font-variation-settings cheat sheet
@@ -65,6 +65,7 @@ p {
 
   &.lead {
     font-size: var(--font-size-l);
+    max-width: 32em;
   }
 }
 
@@ -75,4 +76,15 @@ figure {
 
 img {
   max-width: 100%;
+}
+
+.project-credits {
+  opacity: .5;
+  max-width: 36em;
+  font-size: .8rem;
+  margin: 2rem 0 4rem;
+
+  p {
+    margin: 0;
+  }
 }
