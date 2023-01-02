@@ -1,5 +1,56 @@
 .logo {
   text-decoration: none;
+  font-variation-settings:
+    'wght' 400, /* 100	to 1000 */
+    'wdth' 100, /* 25 to 151 */
+    'opsz' 10, /* 8 to 144 */
+    'GRAD' 0, /* -200 to 150 */
+    'slnt' 0, /* -10 to 0 */
+    'XTRA' 420, /* 323 to 603 */
+    'XOPQ' 90, /* 27 to 175 */
+    'YOPQ' 68, /* 25 to 135 */
+    'YTLC' 560, /* 416 to 570 – lowercase height */
+    'YTUC' 660, /* 528 to 760 – uppercase height */
+    'YTAS' 850, /* 649 to 854 – ascender height */
+    'YTDE' -200, /* -305 to -98 */
+    'YTFI' 600; /* 560 to 788 */
+  animation: variable 3s ease forwards;
+}
+
+@keyframes variable {
+  from {
+    font-variation-settings:
+      'wght' 400, /* 100	to 1000 */
+      'wdth' 100, /* 25 to 151 */
+      'opsz' 10, /* 8 to 144 */
+      'GRAD' 0, /* -200 to 150 */
+      'slnt' 0, /* -10 to 0 */
+      'XTRA' 420, /* 323 to 603 */
+      'XOPQ' 90, /* 27 to 175 */
+      'YOPQ' 68, /* 25 to 135 */
+      'YTLC' 560, /* 416 to 570 – lowercase height */
+      'YTUC' 560, /* 528 to 760 – uppercase height */
+      'YTAS' 850, /* 649 to 854 – ascender height */
+      'YTDE' -200, /* -305 to -98 */
+      'YTFI' 600; /* 560 to 788 */
+  }
+
+  to {
+    font-variation-settings:
+      'wght' 400, /* 100	to 1000 */
+      'wdth' 100, /* 25 to 151 */
+      'opsz' 10, /* 8 to 144 */
+      'GRAD' 0, /* -200 to 150 */
+      'slnt' 0, /* -10 to 0 */
+      'XTRA' 420, /* 323 to 603 */
+      'XOPQ' 90, /* 27 to 175 */
+      'YOPQ' 68, /* 25 to 135 */
+      'YTLC' 460, /* 416 to 570 – lowercase height */
+      'YTUC' 760, /* 528 to 760 – uppercase height */
+      'YTAS' 850, /* 649 to 854 – ascender height */
+      'YTDE' -200, /* -305 to -98 */
+      'YTFI' 600; /* 560 to 788 */
+  }
 }
 
 .header {
