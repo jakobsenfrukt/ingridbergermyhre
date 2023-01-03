@@ -119,8 +119,9 @@
 
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       gap: var(--spacing-m);
-      font-size: var(--font-size-l);
+      font-size: 2rem;
       padding: var(--spacing-sitepadding);
 
       &[data-show=true] {
