@@ -14,15 +14,13 @@ export default function ProjectList ({ projects }) {
       {projects.length > 0 && projects.slice(0, limit).map(
         (project) =>
           project.slug && (
-            <li key={project._id}>
+            <li key={project._id} style={{ '--color-palette': project.color.hex }}>
               {project.image && <Image image={project.image} />}
-              <div className={styles.text}>
-                <h2>{project.title}</h2>
-                {project.intro && <p>{project.intro}</p>}
-                <Link href="/projects/[slug]" as={`/projects/${project.slug.current}`}>
-                  <span>More info</span>
-                </Link>
-              </div>
+              <h2>{project.title}</h2>
+              {project.intro && <p>{project.intro}</p>}
+              <Link href="/projects/[slug]" as={`/projects/${project.slug.current}`}>
+                <span>More info</span>
+              </Link>
             </li>
           )
       )}

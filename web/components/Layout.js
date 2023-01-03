@@ -23,7 +23,7 @@ export default function Layout({ children }) {
 
       <header className={styles.header}>
         <Link href="/" className={styles.logo}><h1>{siteTitle}</h1></Link>
-        <nav>
+        <nav className={styles.siteNav}>
           <button onClick={toggleMenu} data-label="Show menu">
             {showMenu ? (<span>&times;</span>) : (<span>=</span>)}
           </button>

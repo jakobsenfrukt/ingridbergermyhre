@@ -11,7 +11,7 @@ export default function Image ({ image }) {
     <figure>
       <img
         src={urlFor(image)
-          .width(1200)
+          .width(1920)
           .url()}
         alt={image.alt}
       />

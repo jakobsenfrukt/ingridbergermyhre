@@ -2,6 +2,7 @@ import groq from 'groq'
 import client from '../client'
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/Layout';
+import Upcoming from '../components/Upcoming';
 import ProjectList from '../components/ProjectList';
 
 const Home = ({ data }) => {
@@ -12,11 +13,7 @@ const Home = ({ data }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section>
-        {data.home.intro && <p className="lead">
-          {data.home.intro}
-        </p>}
-      </section>
+      <Upcoming />
       <ProjectList projects={data.projects} />
     </Layout>
   )
