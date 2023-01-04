@@ -1,7 +1,7 @@
 .page--project {
   .project-title {
-    font-size: 5rem;
-    margin: .25rem 0;
+    font-size: 4rem;
+    margin: .5rem 0;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -23,14 +23,14 @@
   }
   .project-year {
     display: inline-block;
-    font-size: 3rem;
+    font-size: 2.6rem;
     font-variation-settings:
       'wght' 100, /* 100	to 1000 */
-      'wdth' 25, /* 25 to 151 */
+      'wdth' 135, /* 25 to 151 */
       'opsz' 12, /* 8 to 144 */
       'GRAD' 0, /* -200 to 150 */
       'slnt' 0, /* -10 to 0 */
-      'XTRA' 400, /* 323 to 603 */
+      'XTRA' 600, /* 323 to 603 */
       'XOPQ' 90, /* 27 to 175 */
       'YOPQ' 68, /* 25 to 135 */
       'YTLC' 520, /* 416 to 570 – lowercase height */

@@ -16,7 +16,10 @@ export default function ProjectList ({ projects }) {
           project.slug && (
             <li key={project._id} style={{ '--color-palette': project.color.hex }}>
               {project.image && <Image image={project.image} />}
-              <h2>{project.title}</h2>
+              <h2>
+                <span>{project.title}</span>
+                <span className={styles.year}>{new Date(project.premiereDate).getFullYear()}</span>
+              </h2>
               {project.intro && <p>{project.intro}</p>}
               <Link href="/projects/[slug]" as={`/projects/${project.slug.current}`}>
                 <span>More info</span>
