@@ -26,6 +26,7 @@
     
       h2 {
         grid-column: 2 / span 3;
+        font-variation-settings: var(--font-variation-wide);
       }
     
       p {
@@ -41,6 +42,7 @@
   h2 {
     grid-column: 1 / span 3;
     font-size: 5rem;
+    font-variation-settings: var(--font-variation-slim);
     margin: .5rem 0 1rem;
   }
 
