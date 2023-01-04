@@ -3,6 +3,7 @@ import client from '../client'
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout, { siteTitle } from '../components/Layout'
+import Image from '../components/Image'
 import {PortableText} from '@portabletext/react'
 
 const About = ({ data }) => {
@@ -17,6 +18,7 @@ const About = ({ data }) => {
         {data.intro && <p className="lead">
           {data.intro}
         </p>}
+        {data.image && <Image image={data.image} />}
         {data.body && <PortableText value={data.body} />}
       </section>
     </Layout>

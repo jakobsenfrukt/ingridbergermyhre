@@ -52,6 +52,31 @@
     'YTFI' 600; /* 560 to 788 */
   }
 
+  .status {
+    text-transform: uppercase;
+    font-style: italic;
+    display: inline-block;
+    margin-left: .25rem;
+    &:before {
+      content: "—";
+      display: inline-block;
+      margin-right: .25rem;
+    }
+
+    &[data-status='tryout'] {
+      color: rgb(14, 176, 162);
+    }
+    &[data-status='premiere'] {
+      color: rgb(12, 231, 12);
+    }
+    &[data-status='cancelled'] {
+      color: rgb(231, 12, 27);
+    }
+    &[data-status='postponed'] {
+      color: rgb(231, 114, 12);
+    }
+  }
+
   a {
     position: absolute;
     top: 0;

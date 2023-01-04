@@ -28,6 +28,21 @@ export default {
       description: 'Paste the full URL to the venue or ticket website, including https:// etc.',
       name: 'url',
       type: 'string'
+    },
+    {
+      title: 'Status',
+      name: 'status',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Default', value: 'default'},
+          {title: 'Tryout', value: 'tryout'},
+          {title: 'Premiere', value: 'premiere'},
+          {title: 'Postponed', value: 'postponed'},
+          {title: 'Cancelled', value: 'cancelled'},
+        ],
+        layout: 'radio'
+      },
     }
   ],
   preview: {

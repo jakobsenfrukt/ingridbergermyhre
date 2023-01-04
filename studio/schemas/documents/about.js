@@ -18,6 +18,27 @@ export default {
       title: 'Body',
       name: 'body',
       type: 'body'
-    }
+    },
+    {
+      title: 'Image',
+      name: 'image',
+      type: 'image',
+      options: {
+        hotspot: true
+      },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alternative text',
+          description: 'Important for SEO and accessibility. Describe in short terms what is shown in the image as if to a blind person.',
+        },
+        {
+          name: 'credit',
+          type: 'string',
+          title: 'Credit'
+        }
+      ]
+    },
   ]
 }
