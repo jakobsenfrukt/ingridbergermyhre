@@ -10,19 +10,22 @@ import {PortableText} from '@portabletext/react'
 
 export default function Project ({data}) {
   return (
-    <Layout>
+    <Layout palette={data.color.hex}>
       <Head>
         <title>{data.title} by {siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <section className="page page--project">
-        <h1 className="page__title">{data.title}</h1>
+        <h1 className="project-title">
+          <span>{data.title}</span>
+          <span className="project-year">{new Date(data.premiereDate).getFullYear()}</span>
+        </h1>
         {data.image && <Image image={data.image} />}
-        {data.dates && <DateList dates={data.dates} />}
-        <p className="lead">{data.intro}</p>
+        <p className="lead project-lead">{data.intro}</p>
         {data.body && <div className="project-body"><PortableText value={data.body} /></div>}
         {data.credits && <div className="project-credits"><PortableText value={data.credits} /></div>}
+        {data.dates && <DateList dates={data.dates} />}
         {data.imageGallery && <ImageGallery gallery={data.imageGallery} />}
       </section>
     </Layout>

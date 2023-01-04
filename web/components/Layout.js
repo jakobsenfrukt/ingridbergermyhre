@@ -5,7 +5,7 @@ import styles from './layout.module.scss';
 
 export const siteTitle = 'Ingrid Berger Myhre';
 
-export default function Layout({ children }) {
+export default function Layout({ children, palette }) {
   const [showMenu, setShowMenu] = useState(false);
   function toggleMenu(){
     setShowMenu(!showMenu);
@@ -15,7 +15,7 @@ export default function Layout({ children }) {
   }
 
   return (
-    <div className={styles.layout}>
+    <div className={styles.layout} style={{ '--color-palette': palette }}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="og:title" content={siteTitle} />
@@ -24,8 +24,8 @@ export default function Layout({ children }) {
       <header className={styles.header}>
         <Link href="/" className={styles.logo}><h1>{siteTitle}</h1></Link>
         <nav className={styles.siteNav}>
-          <button onClick={toggleMenu} data-label="Show menu">
-            {showMenu ? (<span>&times;</span>) : (<span>=</span>)}
+          <button onClick={toggleMenu} data-label="Show menu" data-show={showMenu}>
+            <span></span>
           </button>
           <ul data-show={showMenu}>
             <li><Link href="/">Home</Link></li>

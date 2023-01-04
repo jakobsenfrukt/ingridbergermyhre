@@ -1,4 +1,6 @@
 .logo {
+  position: relative;
+  z-index: 1001;
   h1 {
     margin: 0;
     font-size: inherit;
@@ -14,12 +16,13 @@
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  background: lime;
+  background: var(--color-palette);
   width: 100%;
   z-index: 1000;
   font-variation-settings: var(--font-variation-slim);
-  font-size: 2rem;
+  font-size: 1.6rem;
   line-height: 1;
+  text-transform: uppercase;
 }
 
 .main {
@@ -34,8 +37,55 @@
 
 .siteNav {
   button {
+    position: relative;
+    z-index: 1001;
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+
+    span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: currentColor;
+
+      &:before,
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: currentColor;
+      }
+      &:before {
+        top: -.5rem;
+      }
+      &:after {
+        bottom: -.5rem;
+      }
+    }
+
+    &[data-show=true] {
+      span {
+        background: transparent;
+        &:before {
+          top: auto;
+          transform: rotate(-45deg);
+        }
+        &:after {
+          bottom: auto;
+          transform: rotate(45deg);
+        }
+      }
+    }
+    
     display: none;
-    font-size: inherit;
   }
 
   ul {
@@ -50,7 +100,7 @@
       &:after {
         content: "/";
         display: inline-block;
-        margin: 0 1rem;
+        margin: 0 .25em;
         font-variation-settings: var(--font-variation-mid);
       }
       &:nth-of-type(1) {
@@ -79,9 +129,6 @@
   .siteNav {
     button {
       display: block;
-      font-size: 3rem;
-      position: relative;
-      z-index: 1001;
     }
 
     ul {
@@ -91,7 +138,7 @@
       left: 0;
       bottom: 0;
       z-index: 1000;
-      background: #fff;
+      background: var(--color-palette);
       transform: translateX(100%);
 
       flex-direction: column;
@@ -103,6 +150,12 @@
 
       &[data-show=true] {
         transform: translateX(0);
+      }
+
+      li {
+        &:after {
+          display: none;
+        }
       }
     }
   }
