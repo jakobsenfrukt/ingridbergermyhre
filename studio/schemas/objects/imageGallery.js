@@ -21,6 +21,11 @@ export default {
               description: 'Important for SEO and accessibility. Briefly describe what you see in the image as if to a blind person.',
               name: 'alt',
               type: 'string'
+            },
+            {
+              name: 'credit',
+              type: 'string',
+              title: 'Credit'
             }
           ]
         },

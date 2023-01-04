@@ -50,6 +50,11 @@ export default {
           type: 'string',
           title: 'Alternative text',
           description: 'Important for SEO and accessibility. Describe in short terms what is shown in the image as if to a blind person.',
+        },
+        {
+          name: 'credit',
+          type: 'string',
+          title: 'Credit'
         }
       ]
     },
