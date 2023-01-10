@@ -7,7 +7,7 @@ import ProjectList from '../components/ProjectList';
 
 const Home = ({ data }) => {
   return (
-    <Layout>
+    <Layout home={data.home}>
       <Head>
         <title>{siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />

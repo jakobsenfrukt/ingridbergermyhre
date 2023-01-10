@@ -31,8 +31,28 @@
 }
 
 .footer {
-  min-height: 90vh;
+  min-height: 100vh;
   padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  h1 {
+    font-variation-settings: var(--font-variation-wide);
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0 auto 2rem;
+  }
+
+  .contact {
+    margin-bottom: 10vh;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-variation-settings: var(--font-variation-slim);
+  }
 }
 
 .siteNav {

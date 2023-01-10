@@ -82,6 +82,41 @@ export default {
       type: 'body'
     },
     {
+      title: 'Reviews & mentions',
+      name: 'quotes',
+      type: 'array',
+      of: [
+        {
+          title: 'Quote',
+          name: 'quote',
+          type: 'object',
+          fields: [
+            {
+              title: 'Quote text',
+              name: 'text',
+              type: 'text',
+              rows: 3
+            },
+            {
+              title: 'Name',
+              name: 'name',
+              type: 'string'
+            },
+            {
+              title: 'Source',
+              name: 'source',
+              type: 'string'
+            },
+            {
+              title: 'Source URL',
+              name: 'sourceUrl',
+              type: 'string'
+            }
+          ]
+        },
+      ]
+    },
+    {
       title: 'Image gallery',
       name: 'imageGallery',
       type: 'imageGallery'

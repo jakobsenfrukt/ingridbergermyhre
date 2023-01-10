@@ -13,6 +13,11 @@ export default {
       title: 'Intro',
       name: 'intro',
       type: 'text'
-    }
+    },
+    {
+      title: 'Contact',
+      name: 'contact',
+      type: 'body'
+    },
   ]
 }

@@ -4,13 +4,14 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Layout, {siteTitle} from '../../components/Layout'
 import DateList from '../../components/DateList'
+import QuoteList from '../../components/QuoteList'
 import Image from '../../components/Image'
 import ImageGallery from '../../components/ImageGallery'
 import {PortableText} from '@portabletext/react'
 
 export default function Project ({data}) {
   return (
-    <Layout palette={data.color.hex}>
+    <Layout palette={data.color.hex} home={data.home}>
       <Head>
         <title>{data.title} by {siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -26,6 +27,7 @@ export default function Project ({data}) {
         {data.body && <div className="project-body"><PortableText value={data.body} /></div>}
         {data.credits && <div className="project-credits"><PortableText value={data.credits} /></div>}
         {data.dates && <DateList dates={data.dates} />}
+        {data.quotes && <QuoteList quotes={data.quotes} />}
         {data.imageGallery && <ImageGallery gallery={data.imageGallery} />}
       </section>
     </Layout>
@@ -33,7 +35,8 @@ export default function Project ({data}) {
 }
 
 const query = groq`*[_type == "project" && slug.current == $slug][0]{
-  ...
+  ...,
+  'home': *[_type == "home"][0]
 }`
 
 export async function getStaticPaths() {

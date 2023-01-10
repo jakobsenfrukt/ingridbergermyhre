@@ -2,10 +2,12 @@ import { useState } from "react";
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from './layout.module.scss';
+import Upcoming from './Upcoming';
+import {PortableText} from '@portabletext/react'
 
 export const siteTitle = 'Ingrid Berger Myhre';
 
-export default function Layout({ children, palette }) {
+export default function Layout({ children, palette, home }) {
   const [showMenu, setShowMenu] = useState(false);
   function toggleMenu(){
     setShowMenu(!showMenu);
@@ -39,12 +41,10 @@ export default function Layout({ children, palette }) {
 
       <footer id="contact" className={styles.footer}>
         <h1>Contact</h1>
-        <p>This is a footer<br />
-        with some contact info<br />
-        or something like that</p>
-        <p>2 emails for caravan (name + role)</p>
-        <p>personal email</p>
-        <p>instagram?</p>
+        <div className={styles.contact}>
+          {home && home.contact && <PortableText value={home.contact} />}
+        </div>
+        <Upcoming />
       </footer>
     </div>
   );

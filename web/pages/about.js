@@ -8,9 +8,9 @@ import {PortableText} from '@portabletext/react'
 
 const About = ({ data }) => {
   return (
-    <Layout>
+    <Layout home={data.home}>
       <Head>
-        <title>{data.title} {siteTitle}</title>
+        <title>About Ingrid Berger Myhre</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -18,15 +18,20 @@ const About = ({ data }) => {
         {data.intro && <p className="lead">
           {data.intro}
         </p>}
-        {data.image && <Image image={data.image} />}
-        {data.body && <PortableText value={data.body} />}
+        <div className="about-content">
+          {data.image && <Image image={data.image} />}
+          <div>{data.body && <PortableText value={data.body} />}</div>
+        </div>
       </section>
     </Layout>
   )
 }
 
 export async function getStaticProps() {
-  const data = await client.fetch(groq`*[_type == "about"][0]`)
+  const data = await client.fetch(groq`*[_type == "about"][0] {
+    ...,
+    'home': *[_type == "home"][0]
+  }`)
   return {
     props: { data }
   }
