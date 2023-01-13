@@ -41,7 +41,7 @@ const query = groq`*[_type == "project" && slug.current == $slug && archive != t
 
 export async function getStaticPaths() {
   const paths = await client.fetch(
-    groq`*[_type == "project" && defined(slug.current)][].slug.current`
+    groq`*[_type == "project" && defined(slug.current) && archive != true][].slug.current`
   )
 
   return {
