@@ -34,7 +34,7 @@ export default function Project ({data}) {
   )
 }
 
-const query = groq`*[_type == "project" && slug.current == $slug][0]{
+const query = groq`*[_type == "project" && slug.current == $slug && archive != true][0]{
   ...,
   'home': *[_type == "home"][0]
 }`
