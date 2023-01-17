@@ -6,8 +6,8 @@ export default function ImageGallery ({ gallery }) {
     <div className={styles.gallery}>
       <ul>
         {gallery.images.length > 0 && gallery.images.map(
-          (image) => (
-              <li key={image}>
+          (image, index) => (
+              <li key={`image-${index}`}>
                 <Image image={image} />
               </li>
             )
