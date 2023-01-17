@@ -60,7 +60,7 @@ export default function Project ({data}) {
                 )
             )}
           </ul>
-          <p>Photos by: {photographers()}</p>
+          {data.imageGallery && <p>Photos by: {photographers()}</p>}
         </div>
       </section>
     </Layout>
