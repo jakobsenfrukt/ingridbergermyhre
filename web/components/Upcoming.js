@@ -13,7 +13,7 @@ export default function Upcoming ({ projects }) {
     return false
   }
 
-  console.log(upcomingProjects)
+  //console.log(upcomingProjects)
 
   const upcomingDates = upcomingProjects[0].dates;
 
