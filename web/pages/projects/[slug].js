@@ -10,6 +10,16 @@ import ImageGallery from '../../components/ImageGallery'
 import {PortableText} from '@portabletext/react'
 
 export default function Project ({data}) {
+  const photographers = function() {
+    let photographerString = data.image.credit;
+    for (let i = 0; i < data.imageGallery.images.length; i++) {
+      if (!photographerString.includes(data.imageGallery.images[i].credit)) {
+        photographerString = photographerString + ", " + data.imageGallery.images[i].credit
+      }
+    }
+    return photographerString
+  }
+
   return (
     <Layout palette={data.color.hex} home={data.home} projects={data.projects}>
       <Head>
@@ -50,6 +60,7 @@ export default function Project ({data}) {
                 )
             )}
           </ul>
+          <p>Photos by: {photographers()}</p>
         </div>
       </section>
     </Layout>
