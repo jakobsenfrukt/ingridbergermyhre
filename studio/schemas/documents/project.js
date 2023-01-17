@@ -117,6 +117,26 @@ export default {
       ]
     },
     {
+      title: 'Logos',
+      name: 'logos',
+      type: 'array',
+      of: [
+        {
+          title: 'Logo',
+          name: 'logo',
+          type: 'image',
+          fields: [
+            {
+              title: 'Title',
+              description: 'Name of organisation, company, etc.',
+              name: 'title',
+              type: 'string'
+            }
+          ]
+        },
+      ]
+    },
+    {
       title: 'Image gallery',
       name: 'imageGallery',
       type: 'imageGallery'

@@ -7,7 +7,7 @@ import {PortableText} from '@portabletext/react'
 
 export const siteTitle = 'Ingrid Berger Myhre';
 
-export default function Layout({ children, palette, home }) {
+export default function Layout({ children, palette, home, projects }) {
   const [showMenu, setShowMenu] = useState(false);
   function toggleMenu(){
     setShowMenu(!showMenu);
@@ -17,14 +17,14 @@ export default function Layout({ children, palette, home }) {
   }
 
   return (
-    <div className={styles.layout} style={{ '--color-palette': palette }}>
+    <div id="layout" className={styles.layout} style={{ '--color-palette': palette }}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="og:title" content={siteTitle} />
       </Head>
 
       <header className={styles.header}>
-        <Link href="/" className={styles.logo}><h1>{siteTitle}</h1></Link>
+        <Link href="/" className={styles.logo}><h1><span>Ingrid</span> <span>Berger</span> <span>Myhre</span></h1></Link>
         <nav className={styles.siteNav}>
           <button onClick={toggleMenu} data-label="Show menu" data-show={showMenu}>
             <span></span>
@@ -41,10 +41,12 @@ export default function Layout({ children, palette, home }) {
 
       <footer id="contact" className={styles.footer}>
         <h1>Contact</h1>
-        <div className={styles.contact}>
+        <section className={styles.contact}>
           {home && home.contact && <PortableText value={home.contact} />}
+        </section>
+        <div className="upcoming">
+          <Upcoming projects={projects} />
         </div>
-        <Upcoming />
       </footer>
     </div>
   );

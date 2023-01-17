@@ -8,7 +8,7 @@ import {PortableText} from '@portabletext/react'
 
 const About = ({ data }) => {
   return (
-    <Layout home={data.home}>
+    <Layout home={data.home} projects={data.projects}>
       <Head>
         <title>About Ingrid Berger Myhre</title>
         <link rel="icon" href="/favicon.ico" />
@@ -30,7 +30,8 @@ const About = ({ data }) => {
 export async function getStaticProps() {
   const data = await client.fetch(groq`*[_type == "about"][0] {
     ...,
-    'home': *[_type == "home"][0]
+    'home': *[_type == "home"][0],
+    'projects': *[_type == "project" && archive != true] | order(premiereDate desc),
   }`)
   return {
     props: { data }

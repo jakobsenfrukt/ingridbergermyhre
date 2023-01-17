@@ -1,6 +1,8 @@
 import styles from './upcoming.module.scss'
 
-export default function Upcoming ({ dates }) {
+export default function Upcoming ({ projects }) {
+  const upcomingProjects = projects.slice(0, 2);
+  let limit = 5;
   function isUpcoming(rawDate) {
     var now = new Date();
     var date = new Date(rawDate);
@@ -10,22 +12,26 @@ export default function Upcoming ({ dates }) {
     }
     return false
   }
+
+  console.log(upcomingProjects)
+
+  const upcomingDates = upcomingProjects[0].dates;
+
   return (
     <div className={styles.upcoming}>
       <h2>Upcoming</h2>
       <ul>
-        <li>date</li><li>date</li><li>date</li><li>date</li><li>date</li>
-        {/*dates.length > 0 && dates.map(
+        {upcomingDates.length > 0 && upcomingDates.slice(0, limit).map(
           ({date, monthOnly, venue, city, url}) =>
             date && (
-              <li key={date} className={`${isUpcoming(date) ? styles.upcoming : styles.passed}`}>
+              <li key={date} className={styles.upcoming}>
                 {monthOnly ? <span className={styles.date}>{new Date(date).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}</span> : <span className={styles.date}>{new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>}
-                {venue && <span className={styles.venue}>{venue}, </span>}
-                <span className={styles.city}>{city}</span>
-                {url && <a href={url} target="_blank">Visit website</a>}
+                <span className={styles.title}>Panflutes and Paperwork</span>
+                {venue && city && <span className={styles.venue}>{venue}, {city}</span>}
+                {url && <a href={url} target="_blank"><span>Get tickets</span></a>}
               </li>
             )
-            )*/}
+            )}
       </ul>
     </div>
   )

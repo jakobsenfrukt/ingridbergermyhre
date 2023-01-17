@@ -5,7 +5,7 @@
 }
 
 html {
-  font-size: calc(16px + 4 * (100vw - 320px) / 1600);
+  font-size: calc(12px + 6 * (100vw - 320px) / 1600);
   min-height: 100%;
 }
 
@@ -53,6 +53,7 @@ h4,
 h5,
 h6 {
   line-height: 1.1;
+  font-weight: normal;
 }
 
 h1 {
@@ -64,7 +65,7 @@ p {
   margin: 0 0 1.4em;
 
   &.lead {
-    font-size: var(--font-size-l);
+    font-size: 1.6rem;
     max-width: 32em;
   }
 }
@@ -76,4 +77,8 @@ figure {
 
 img {
   max-width: 100%;
+}
+
+section {
+  padding: var(--spacing-sitepadding);
 }

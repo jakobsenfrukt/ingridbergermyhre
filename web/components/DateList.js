@@ -12,12 +12,12 @@ export default function DateList ({ dates }) {
   }
   return (
     <div className={styles.dates}>
-      <h2>Dates</h2>
+      <h2>Upcoming</h2>
       <ul>
         {dates.length > 0 && dates.map(
-          ({date, monthOnly, venue, city, status, url}) =>
+          ({date, monthOnly, venue, city, status, url}, index) =>
             date && (
-              <li key={date} className={`${isUpcoming(date) ? styles.upcoming : styles.passed}`}>
+              <li key={index} className={`${isUpcoming(date) ? styles.upcoming : styles.passed}`}>
                 {monthOnly ? <span className={styles.date}>{new Date(date).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}</span> : <span className={styles.date}>{new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>}
                 {venue && <span className={styles.venue}>{venue}, </span>}
                 <span className={styles.city}>{city}</span>

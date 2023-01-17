@@ -7,13 +7,13 @@ import ProjectList from '../components/ProjectList';
 
 const Home = ({ data }) => {
   return (
-    <Layout home={data.home}>
+    <Layout home={data.home} projects={data.projects}>
       <Head>
         <title>{siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Upcoming />
+      <Upcoming projects={data.projects} />
       <ProjectList projects={data.projects} />
     </Layout>
   )
