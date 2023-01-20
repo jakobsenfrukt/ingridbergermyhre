@@ -69,6 +69,12 @@
     font-variation-settings: var(--font-variation-wide);
     line-height: 1.2;
     margin: .4rem 0 .6rem;
+    transition: all .3s ease;
+  }
+  li:hover {
+    .title {
+      font-variation-settings: var(--font-variation-wide-animation);
+    }
   }
 
   a {
