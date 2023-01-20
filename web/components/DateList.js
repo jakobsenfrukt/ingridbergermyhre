@@ -1,15 +1,17 @@
 import styles from './dateList.module.scss'
 
-export default function DateList ({ dates }) {
-  function isUpcoming(rawDate) {
-    var now = new Date();
-    var date = new Date(rawDate);
+export function isUpcoming(rawDate) {
+  var now = new Date();
+  var date = new Date(rawDate);
 
-    if (date > now) {
-      return true
-    }
-    return false
+  if (date > now) {
+    return true
   }
+  return false
+}
+
+export default function DateList ({ dates }) {
+
 
   const upcomingDates = [...dates].sort(function(a,b){
     return new Date(a.date) - new Date(b.date);
