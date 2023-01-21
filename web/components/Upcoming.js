@@ -20,9 +20,9 @@ export default function Upcoming({ projects }) {
       <h2>Upcoming</h2>
       <ul>
         {upcomingDates.length > 0 && upcomingDates.slice(0, limit).map(
-          (event) =>
+          (event, index) =>
             event.date && (
-              <li key={event.date} className={styles.upcoming} style={{ '--color-palette': event.color.hex }}>
+              <li key={event.title + index} className={styles.upcoming} style={{ '--color-palette': event.color.hex }}>
                 {event.date.monthOnly ? <span className={styles.date}>{new Date(event.date).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}</span> : <span className={styles.date}>{new Date(event.date.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>}
                 <span className={styles.title}>{event.title}</span>
                 {event.date.venue && event.date.city && <span className={styles.venue}>{event.date.venue}, {event.date.city}</span>}

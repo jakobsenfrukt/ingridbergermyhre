@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import styles from './dateList.module.scss'
 
 export function isUpcoming(rawDate) {
@@ -18,11 +19,25 @@ export default function DateList({ dates }) {
     return new Date(b.date) - new Date(a.date);
   }).filter(i => !isUpcoming(i.date));
 
+  const datesCount = upcomingDates.length + previousDates.length;
+
+  const [upcomingLimit, setUpcomingLimit] = useState(10);
+  const [previouslyLimit, setPreviouslyLimit] = useState(
+    upcomingLimit - upcomingDates.length
+  );
+
+  function showMore() {
+    const newLimit = upcomingLimit + 10
+    setUpcomingLimit(newLimit)
+    setPreviouslyLimit(newLimit - upcomingDates.length)
+  }
+
+
   return (
     <div className={styles.dates}>
       {upcomingDates.length > 0 && (<div><h2>Upcoming</h2>
         <ul>
-          {upcomingDates.map(
+          {upcomingDates.slice(0, upcomingLimit).map(
             ({ date, monthOnly, venue, city, status, url }, index) =>
               date && (
                 <li key={index} className={styles.upcoming}>
@@ -37,7 +52,7 @@ export default function DateList({ dates }) {
         </ul></div>)}
       {previousDates.length > 0 && (<div><h2>Previously</h2>
         <ul>
-          {previousDates.length > 0 && previousDates.map(
+          {previousDates.slice(0, previouslyLimit).map(
             ({ date, monthOnly, venue, city, status }, index) =>
               date && (
                 <li key={index} className={styles.passed}>
@@ -49,6 +64,8 @@ export default function DateList({ dates }) {
               )
           )}
         </ul></div>)}
+
+        {datesCount > upcomingLimit && <button onClick={showMore}>Show more ({upcomingLimit}/{datesCount})</button>}
     </div>
   )
 }
