@@ -1,0 +1,12 @@
+.videos {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    background: var(--color-palette);
+    margin-bottom: var(--spacing-gap);
+    padding: 1rem;
+  }
+}

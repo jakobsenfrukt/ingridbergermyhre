@@ -7,8 +7,8 @@ export default function ImageGallery ({ gallery }) {
       <ul>
         {gallery.images.length > 0 && gallery.images.map(
           (image, index) => (
-              <li key={`image-${index}`}>
-                <Image image={image} />
+              <li key={`image-${index}`} className={styles[image.width]}>
+                <Image image={image} showCredit />
               </li>
             )
         )}

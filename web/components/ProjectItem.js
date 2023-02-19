@@ -17,9 +17,10 @@ export default function ProjectList ({ project }) {
   return (
     <li className={styles.project} style={{ '--color-palette': project.color.hex }} data-inview={ProjectIsInView}>
       {project.image && <Image image={project.image} />}
-      <h2>
+      <h2 className={project.font}>
         <span>{project.title}</span>
         <span className={styles.year}>{new Date(project.premiereDate).getFullYear()}</span>
+        {project.research && <span className={styles.research}>Research</span>}
       </h2>
       {project.intro && <p>{project.intro}</p>}
       <div className={styles.observer} ref={observer}></div>

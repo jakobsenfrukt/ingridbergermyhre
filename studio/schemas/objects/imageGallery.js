@@ -26,8 +26,20 @@ export default {
               name: 'credit',
               type: 'string',
               title: 'Credit'
-            }
-          ]
+            },
+            {
+              title: 'Width',
+              name: 'width',
+              type: 'string',
+              options: {
+                list: [
+                  {title: 'Full width', value: 'full'},
+                  {title: '1/2', value: 'half'},
+                ],
+                layout: 'radio'
+              },
+            },
+          ],
         },
       ],
       options: {

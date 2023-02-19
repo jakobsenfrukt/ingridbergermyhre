@@ -15,6 +15,16 @@ export default {
       type: 'text'
     },
     {
+      title: 'Projects',
+      description: 'Order of projects shown on the front page.',
+      name: 'projects',
+      type: 'array',
+      of: [{
+        type: 'reference',
+        to: [{ type: 'project' }]
+      }]
+    },
+    {
       title: 'Contact',
       name: 'contact',
       type: 'body'

@@ -3,7 +3,6 @@ import styles from './quoteList.module.scss'
 export default function QuoteList ({ quotes }) {
   return (
     <div className={styles.quotes}>
-      <h2>Reviews & mentions</h2>
       <ul className={styles.quotelist}>
         {quotes.length > 0 && quotes.map(
           ({text, name, source, sourceUrl}) =>

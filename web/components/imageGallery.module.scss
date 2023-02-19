@@ -7,12 +7,38 @@
     grid-template-columns: repeat(1, 1fr);
     gap: var(--spacing-gap);
   }
+  li {
+    grid-column: 1 / -1;
+    position: relative;
+  }
+  img {
+    display: block;
+  }
 }
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-size: 12px;
+  padding: 2px 6px;
+}
+
 
 @media (min-width: 800px) {
   .gallery {
     ul {
-      //grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+    }
+    li {
+      &.full {
+        grid-column: span 2;
+      }
+      &.half {
+        grid-column: span 1;
+      }
     }
   }
 }

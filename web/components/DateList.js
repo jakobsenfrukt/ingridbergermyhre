@@ -32,6 +32,11 @@ export default function DateList({ dates }) {
     setPreviouslyLimit(newLimit - upcomingDates.length)
   }
 
+  function replaceHyphens(string) {
+    var newString = string.replace(/-/g, ' ')
+    return newString
+  }
+
 
   return (
     <div className={styles.dates}>
@@ -44,8 +49,15 @@ export default function DateList({ dates }) {
                   {monthOnly ? <span className={styles.date}>{new Date(date).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}</span> : <span className={styles.date}>{new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>}
                   {venue && <span className={styles.venue}>{venue}, </span>}
                   <span className={styles.city}>{city}</span>
-                  {status && status !== 'default' && <span className={styles.status} data-status={status}>{status}</span>}
-                  {url && isUpcoming(date) && status !== 'cancelled' && <a href={url} target="_blank">Visit website</a>}
+                  {status && status !== 'default' && <span className={styles.status} data-status={status}>{replaceHyphens(status)}</span>}
+                  {url && isUpcoming(date) && status !== 'cancelled' && <a href={url} target="_blank">
+                    <svg className={styles.linkIcon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
+                      <title>
+                        Visit website
+                      </title>
+                      <path fill="currentColor" d="M6 1h5v5L8.86 3.85 4.7 8 4 7.3l4.15-4.16L6 1Z M2 3h2v1H2v6h6V8h1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/>
+                    </svg>
+                  </a>}
                 </li>
               )
           )}
@@ -59,7 +71,7 @@ export default function DateList({ dates }) {
                   {monthOnly ? <span className={styles.date}>{new Date(date).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}</span> : <span className={styles.date}>{new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>}
                   {venue && <span className={styles.venue}>{venue}, </span>}
                   <span className={styles.city}>{city}</span>
-                  {status && status !== 'default' && <span className={styles.status} data-status={status}>{status}</span>}
+                  {status && status !== 'default' && <span className={styles.status} data-status={status}>{replaceHyphens(status)}</span>}
                 </li>
               )
           )}

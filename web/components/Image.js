@@ -1,4 +1,4 @@
-//import styles from './image.module.scss'
+import styles from './imageGallery.module.scss'
 
 import client from '../client'
 import imageUrlBuilder from '@sanity/image-url'
@@ -6,7 +6,7 @@ function urlFor (source) {
   return imageUrlBuilder(client).image(source)
 }
 
-export default function Image ({ image }) {
+export default function Image ({ image, showCredit }) {
   return (
     <figure>
       <img
@@ -15,6 +15,7 @@ export default function Image ({ image }) {
           .url()}
         alt={image.alt}
       />
+      {showCredit && image.credit && <figcaption className={styles.caption}>Photo: {image.credit}</figcaption>}
     </figure>
   )
 }

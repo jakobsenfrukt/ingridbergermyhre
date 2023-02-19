@@ -13,15 +13,18 @@ const Home = ({ data }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Upcoming projects={data.projects} />
-      <ProjectList projects={data.projects} />
+      <Upcoming projects={data.projects} limit="5" />
+      <ProjectList projects={data.home.projects} />
     </Layout>
   )
 }
 
 export async function getStaticProps() {
   const data = await client.fetch(groq`{
-    'home': *[_type == "home"][0],
+    'home': *[_type == "home"][0] {
+      ...,
+      'projects': projects[]->
+    },
     'projects': *[_type == "project" && archive != true] | order(premiereDate desc),
   }`)
   return {

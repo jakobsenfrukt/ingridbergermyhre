@@ -1,7 +1,6 @@
 .upcoming {
   font-size: .8rem;
   line-height: 1.2;
-  text-align: center;
   padding: 0 var(--spacing-sitepadding);
   h2 {
     text-align: center;
@@ -66,14 +65,14 @@
   .title {
     display: block;
     font-size: 1rem;
-    font-variation-settings: var(--font-variation-wide);
+    //font-variation-settings: var(--font-variation-wide);
     line-height: 1.2;
     margin: .4rem 0 .6rem;
     transition: all .3s ease;
   }
   li:hover {
     .title {
-      font-variation-settings: var(--font-variation-wide-animation);
+      //font-variation-settings: var(--font-variation-wide-animation);
     }
   }
 

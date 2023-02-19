@@ -67,6 +67,19 @@ export default {
       }
     },
     {
+      title: 'Font width',
+      name: 'font',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Wide', value: 'wide'},
+          {title: 'Normal', value: 'normal'},
+          {title: 'Narrow', value: 'narrow'},
+        ],
+        layout: 'radio'
+      },
+    },
+    {
       title: 'Intro',
       name: 'intro',
       type: 'text'
@@ -117,6 +130,35 @@ export default {
       ]
     },
     {
+      title: 'Video links',
+      name: 'videos',
+      type: 'array',
+      of: [
+        {
+          title: 'Video',
+          name: 'video',
+          type: 'object',
+          fields: [
+            {
+              title: 'Title',
+              name: 'title',
+              type: 'string',
+            },
+            {
+              title: 'Video URL',
+              name: 'url',
+              type: 'string',
+            }
+          ],
+        },
+      ],
+    },
+    {
+      title: 'Image gallery',
+      name: 'imageGallery',
+      type: 'imageGallery'
+    },
+    {
       title: 'Logos',
       name: 'logos',
       type: 'array',
@@ -137,9 +179,15 @@ export default {
       ]
     },
     {
-      title: 'Image gallery',
-      name: 'imageGallery',
-      type: 'imageGallery'
+      title: 'Research',
+      name: 'research',
+      type: 'boolean',
+    },
+    {
+      title: 'Hide from upcoming',
+      description: 'When this is on (green), the project will not be shown among upcoming dates.',
+      name: 'hideUpcoming',
+      type: 'boolean',
     },
     {
       title: 'Archive',

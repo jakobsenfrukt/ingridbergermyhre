@@ -7,6 +7,7 @@ import DateList from '../../components/DateList'
 import QuoteList from '../../components/QuoteList'
 import Image from '../../components/Image'
 import ImageGallery from '../../components/ImageGallery'
+import VideoList from '../../components/VideoList'
 import {PortableText} from '@portabletext/react'
 
 export default function Project ({data}) {
@@ -17,7 +18,7 @@ export default function Project ({data}) {
     }
     if (data.imageGallery) {
       for (let i = 0; i < data.imageGallery.images.length; i++) {
-        if (photographerString && !photographerString.includes(data.imageGallery.images[i].credit)) {
+        if (data.imageGallery.images[i].credit && photographerString && !photographerString.includes(data.imageGallery.images[i].credit)) {
           photographerString = photographerString + ", " + data.imageGallery.images[i].credit
         }
       }
@@ -35,8 +36,9 @@ export default function Project ({data}) {
       <div className="project-hero">
         {data.image && <Image image={data.image} />}
         <h1 className="project-title">
-          <span>{data.title}</span>
+          <span className={data.font}>{data.title}</span>
           <span className="project-year">{new Date(data.premiereDate).getFullYear()}</span>
+          {data.research && <span className="label label--research">Research</span>}
         </h1>
       </div>
       <section className="page page--project">
@@ -44,6 +46,9 @@ export default function Project ({data}) {
           <p className="lead">{data.intro}</p>
           {data.body && <div className="project-body"><PortableText value={data.body} /></div>}
           {data.credits && <div className="project-credits"><PortableText value={data.credits} /></div>}
+        </div>
+        <div className="project-videos">
+          {data.videos && <VideoList videos={data.videos} />}
         </div>
         <div className="project-dates">
           {data.dates && <DateList dates={data.dates} />}

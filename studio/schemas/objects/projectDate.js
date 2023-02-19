@@ -40,6 +40,7 @@ export default {
           {title: 'Premiere', value: 'premiere'},
           {title: 'Postponed', value: 'postponed'},
           {title: 'Cancelled', value: 'cancelled'},
+          {title: 'In residency', value: 'in-residency'},
         ],
         layout: 'radio'
       },
