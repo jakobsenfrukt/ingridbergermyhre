@@ -1,6 +1,7 @@
 .dates {
   margin-bottom: 2rem;
   font-size: .8rem;
+  padding-right: 3rem;
 
   h2 {
     margin: 0 0 .5em;
@@ -24,7 +25,7 @@
   ul {
     list-style: none;
     margin: 0 0 3rem;
-    padding: 0 3rem 0 0;
+    padding: 0;
     display: block;
   }
 
@@ -32,14 +33,14 @@
     display: block;
     position: relative;
     padding: .5em 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--color-border);
 
     &:last-of-type {
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid var(--color-border);
     }
 
     &.passed {
-      opacity: .5;
+      font-style: italic;
     }
 
     &.upcoming {
@@ -116,5 +117,29 @@
     top: .5rem;
     right: 0;
     width: .8em;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    margin: -3rem 0 3rem;
+    padding: .6rem 0 .5rem;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+    font-family: inherit;
+    font-size: inherit;
+    font-variation-settings: var(--font-variation-wide);
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 800px) {
+  .dates {
+    button {
+      text-align: left;
+    }
   }
 }

@@ -15,7 +15,7 @@ export default function ProjectList ({ project }) {
   })
 
   return (
-    <li className={styles.project} style={{ '--color-palette': project.color.hex }} data-inview={ProjectIsInView}>
+    <li className={`${styles.project} ${styles[project.font]}`} style={{ '--color-palette': project.color.hex }} data-inview={ProjectIsInView}>
       {project.image && <Image image={project.image} />}
       <h2 className={project.font}>
         <span>{project.title}</span>

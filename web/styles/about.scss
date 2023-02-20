@@ -1,5 +1,21 @@
 .about-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
+
+  max-width: 70rem;
+  margin: 0 auto;
+
+  figure {
+    text-align: right;
+  }
+  img {
+    max-width: 30rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .about-content {
+    grid-template-columns: 1fr 1fr;
+  }
 }

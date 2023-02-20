@@ -1,4 +1,5 @@
 import styles from './imageGallery.module.scss'
+import { useInView } from 'react-intersection-observer'
 
 import client from '../client'
 import imageUrlBuilder from '@sanity/image-url'
@@ -7,8 +8,11 @@ function urlFor (source) {
 }
 
 export default function Image ({ image, showCredit }) {
+  const { ref: observer, inView: IsInView } = useInView({ triggerOnce: false })
+
   return (
-    <figure>
+    <figure data-inview={IsInView} className={styles.image}>
+      <div className={styles.observer} ref={observer}></div>
       <img
         src={urlFor(image)
           .width(1920)

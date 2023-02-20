@@ -25,25 +25,25 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .quote {
   display: block;
   position: relative;
-
-  &:nth-of-type(odd) {
-    margin-top: 3rem;
-  }
+  width: 100%;
+  margin-top: 4rem;
+  padding-right: 3rem;
+  text-align: center;
 
   &:before {
     content: '”';
     display: block;
-    line-height: .5;
-    font-size: 4rem;
+    line-height: .25;
+    font-size: 7rem;
     font-family: serif;
     color: var(--color-palette);
   }
@@ -91,16 +91,16 @@
 
 @media (min-width: 800px) {
   .quotes {
-    ul {
-      grid-template-columns: repeat(2, 1fr);
+    .quote {
+      width: 50%;
     }
   }
 }
 
 @media (min-width: 1200px) {
   .quotes {
-    ul {
-      grid-template-columns: repeat(3, 1fr);
+    .quote {
+      width: 33%;
     }
   }
 }

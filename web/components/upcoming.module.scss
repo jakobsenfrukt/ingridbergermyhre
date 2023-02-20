@@ -71,8 +71,10 @@
     transition: all .3s ease;
   }
   li:hover {
-    .title {
-      //font-variation-settings: var(--font-variation-wide-animation);
+    a {
+      &:after {
+        background: var(--color-text);
+      }
     }
   }
 
@@ -88,7 +90,7 @@
     cursor: pointer;
 
     &:after {
-      content: "k";
+      content: "";
       display: block;
       position: absolute;
       top: .5rem;
@@ -97,6 +99,7 @@
       height: 10px;
       background: var(--color-palette);
       border-radius: 1rem;
+      transition: all .2s ease;
     }
   }
 
