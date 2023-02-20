@@ -13,7 +13,7 @@ const Home = ({ data }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Upcoming projects={data.projects} limit="5" />
+      <Upcoming projects={data.projects} limit="6" />
       <ProjectList projects={data.home.projects} />
     </Layout>
   )

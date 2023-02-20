@@ -89,6 +89,14 @@
     'YTFI' 600; /* 560 to 788 */
 }
 
+@media (min-width: 800px) {
+  .quotes {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
 @media (min-width: 1200px) {
   .quotes {
     ul {

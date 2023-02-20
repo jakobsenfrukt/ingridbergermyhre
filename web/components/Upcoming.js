@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from './upcoming.module.scss'
 import Link from 'next/link'
 import { isUpcoming } from './DateList.js'
@@ -13,11 +14,18 @@ export default function Upcoming({ projects, limit }) {
     .filter(i => i.date.status !== 'cancelled')
     .sort((a, b) => (new Date(a.date.date) - new Date(b.date.date)))
 
+  const [maxLimit, setMaxLimit] = useState(limit);
+  function showAll(){
+    setMaxLimit(1000);
+  }
+
+
+
   return (
     <div className={styles.upcoming}>
       <h2>Upcoming</h2>
       <ul>
-        {upcomingDates.length > 0 && upcomingDates.slice(0, limit).map(
+        {upcomingDates.length > 0 && upcomingDates.slice(0, maxLimit).map(
           (event, index) =>
             event.date && (
               <li key={event.title + index} className={styles.upcoming} style={{ '--color-palette': event.color.hex }}>
@@ -29,7 +37,7 @@ export default function Upcoming({ projects, limit }) {
             )
         )}
       </ul>
-      {limit && limit < upcomingDates.length && <button>Show full tour list</button>}
+      {maxLimit && maxLimit < upcomingDates.length && <button onClick={showAll}>&darr; &nbsp; Show full tour list &nbsp; &darr;</button>}
     </div>
   )
 }

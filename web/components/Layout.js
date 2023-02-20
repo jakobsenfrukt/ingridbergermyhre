@@ -44,7 +44,7 @@ export default function Layout({ children, palette, home, projects }) {
           <h1>Contact</h1>
           {home && home.contact && <PortableText value={home.contact} />}
         </section>
-        <div className="upcoming">
+        <div className={styles.upcoming}>
           <Upcoming projects={projects} />
         </div>
       </footer>
