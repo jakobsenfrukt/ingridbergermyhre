@@ -19,7 +19,7 @@ const About = ({ data }) => {
           {data.intro}
         </p>}
         <div className="about-content">
-          {data.image && <Image image={data.image} />}
+          {data.image && <Image image={data.image} showCredit />}
           <div>{data.body && <PortableText value={data.body} />}</div>
         </div>
       </section>

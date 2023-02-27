@@ -33,26 +33,21 @@
 }
 
 .project-title {
-  font-size: 5rem;
   line-height: 1;
   margin: 1rem 0;
-  padding: 0 10rem;
+  padding: 2rem 0 0;
   text-align: center;
   text-transform: uppercase;
   position: relative;
-
-  span:first-of-type {
-    display: block;
-    max-width: 36rem;
-    margin: 0 auto;
-  }
 }
 
 .project-year {
   position: absolute;
   top: 0;
-  left: var(--spacing-sitepadding);
-  font-size: 2.5rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 1.4rem;
   font-weight: normal;
   font-variation-settings:
     'wght' 100, /* 100	to 1000 */
@@ -189,28 +184,28 @@
 }
 
 @media (min-width: 800px) {
-  .page--project {
-    .project-dates {
-      grid-column: 7 / span 6;
-      order: 3;
-    }
-    .project-videos {
-      grid-column: 1 / span 6;
-      order: 2;
-      padding-right: 3rem;
-    }
+  .project-title {
+    padding: 0 10rem;
+    margin-top: 1rem;
   }
-}
-
-@media (min-width: 1000px) {
+  .project-year {
+    position: absolute;
+    top: 0;
+    right: auto;
+    left: var(--spacing-sitepadding);
+    text-align: left;
+    font-size: 2.5rem;
+  }
   .page--project {
     .project-text {
       grid-column: span 6;
       order: 2;
+      padding-right: 3rem;
     }
     .project-dates {
       grid-column: 1 / span 3;
       order: 1;
+      padding-right: 3rem;
     }
     .project-videos {
       grid-column: 10 / span 3;

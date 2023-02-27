@@ -1,0 +1,30 @@
+.animatedTitle {
+  position: relative;
+  max-width: 40rem;
+  font-size: 4rem;
+  margin: 0 auto 2rem;
+  opacity: 0;
+  transition: all 1s ease;
+
+  &[data-inview=true] {
+    opacity: 1;
+  }
+}
+
+.wide {
+  font-variation-settings: var(--font-variation-wide);
+}
+
+.normal {
+  font-variation-settings: var(--font-variation-slim-animation);
+}
+
+.narrow {
+  font-variation-settings: var(--font-variation-slim);
+}
+
+@media (min-width: 800px) {
+  .animatedTitle {
+    font-size: 6rem;
+  }
+}

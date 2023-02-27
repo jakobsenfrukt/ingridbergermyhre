@@ -19,11 +19,9 @@
 .image {
   position: relative;
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 1s .2s ease;
+  transition: all .6s ease;
   &[data-inview=true] {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 

@@ -8,6 +8,7 @@ import QuoteList from '../../components/QuoteList'
 import Image from '../../components/Image'
 import ImageGallery from '../../components/ImageGallery'
 import VideoList from '../../components/VideoList'
+import AnimatedTitle from '../../components/AnimatedTitle'
 import {PortableText} from '@portabletext/react'
 
 export default function Project ({data}) {
@@ -36,7 +37,7 @@ export default function Project ({data}) {
       <div className="project-hero">
         {data.image && <Image image={data.image} />}
         <h1 className="project-title">
-          <span className={data.font}>{data.title}</span>
+          <AnimatedTitle content={data.title} width={data.font} />
           <span className="project-year">{new Date(data.premiereDate).getFullYear()}</span>
           {data.research && <span className="label label--research">Research</span>}
         </h1>

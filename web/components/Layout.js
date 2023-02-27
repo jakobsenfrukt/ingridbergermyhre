@@ -23,7 +23,7 @@ export default function Layout({ children, palette, home, projects }) {
         <meta name="og:title" content={siteTitle} />
       </Head>
 
-      <header className={styles.header}>
+      <header id="header" className={styles.header}>
         <Link href="/" className={styles.logo}><h1><span>Ingrid</span> <span>Berger</span> <span>Myhre</span></h1></Link>
         <nav className={styles.siteNav}>
           <button onClick={toggleMenu} data-label="Show menu" data-show={showMenu}>

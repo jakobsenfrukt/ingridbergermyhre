@@ -148,6 +148,13 @@ export default {
               title: 'Video URL',
               name: 'url',
               type: 'string',
+            },
+            {
+              title: 'Description',
+              description: 'A short note, source, etc.',
+              name: 'description',
+              type: 'text',
+              rows: 2
             }
           ],
         },

@@ -7,10 +7,12 @@ import { useInView } from 'react-intersection-observer'
 
 export default function ProjectList ({ project }) {
   const { ref: observer, inView: ProjectIsInView } = useInView({ triggerOnce: false })
+  const { ref: gradientObserver, inView: ProjectGradientIsInView } = useInView({ triggerOnce: false })
 
   useEffect(() => {
-    if (ProjectIsInView) {
+    if (ProjectGradientIsInView) {
       document.body.style.setProperty('--color-palette', project.color.hex)
+      //document.getElementById('header').style.setProperty('background-color', project.color.hex)
     }
   })
 
@@ -24,6 +26,7 @@ export default function ProjectList ({ project }) {
       </h2>
       {project.intro && <p>{project.intro}</p>}
       <div className={styles.observer} ref={observer}></div>
+      <div className={styles.gradientObserver} ref={gradientObserver}></div>
       <Link href="/projects/[slug]" as={`/projects/${project.slug.current}`}>
         <span>More info</span>
       </Link>

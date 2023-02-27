@@ -1,6 +1,7 @@
 .about-content {
   display: grid;
   grid-template-columns: 1fr;
+  align-items: flex-start;
   gap: 2rem;
 
   max-width: 70rem;
@@ -8,14 +9,19 @@
 
   figure {
     text-align: right;
+    max-width: 400px;
   }
   img {
-    max-width: 30rem;
+    display: block;
   }
 }
 
 @media (min-width: 800px) {
   .about-content {
     grid-template-columns: 1fr 1fr;
+
+    figure {
+      max-width: none;
+    }
   }
 }
