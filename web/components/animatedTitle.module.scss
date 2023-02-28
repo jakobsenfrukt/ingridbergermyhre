@@ -24,6 +24,14 @@
       font-variation-settings: var(--font-variation-narrow-animationEnd) !important;
     }
   }
+
+  &.small {
+    font-size: inherit;
+    margin: 0;
+    span {
+      text-transform: none;
+    }
+  }
 }
 
 .wide {
@@ -41,5 +49,9 @@
 @media (min-width: 800px) {
   .animatedTitle {
     font-size: 6rem;
+
+    &.small {
+      font-size: inherit;
+    }
   }
 }

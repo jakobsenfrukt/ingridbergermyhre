@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import styles from './projectItem.module.scss'
 import Image from './Image'
+import AnimatedTitleSmall from './AnimatedTitleSmall'
 import { useInView } from 'react-intersection-observer'
 
 
@@ -20,7 +21,7 @@ export default function ProjectList ({ project }) {
     <li className={`${styles.project} ${styles[project.font]}`} style={{ '--color-palette': project.color.hex }} data-inview={ProjectIsInView}>
       {project.image && <Image image={project.image} />}
       <h2 className={project.font}>
-        <span>{project.title}</span>
+        <AnimatedTitleSmall content={project.title} width={project.font} />
         <span className={styles.year}>{new Date(project.premiereDate).getFullYear()}</span>
         {project.research && <span className={styles.research}>Research</span>}
       </h2>
