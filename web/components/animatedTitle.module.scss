@@ -1,30 +1,37 @@
 .animatedTitle {
   position: relative;
   max-width: 60rem;
-  font-size: 4rem;
+  font-size: 3.7rem;
   margin: 0 auto 2rem;
   opacity: 0;
   transition: all 1s ease;
 
+  span {
+    transition-property: all;
+    transition-duration: 4s;
+    transition-timing-function: ease;
+    text-transform: uppercase;
+  }
+
   &[data-inview=true] {
     opacity: 1;
+
+    &.wide span {
+      font-variation-settings: var(--font-variation-wide-animationEnd) !important;
+    }
+    
+    &.normal span {
+      font-variation-settings: var(--font-variation-normal-animationEnd) !important;
+    }
+    
+    &.narrow span {
+      font-variation-settings: var(--font-variation-narrow-animationEnd) !important;
+    }
   }
-}
-
-.wide {
-  font-variation-settings: var(--font-variation-wide);
-}
-
-.normal {
-  font-variation-settings: var(--font-variation-normal);
-}
-
-.narrow {
-  font-variation-settings: var(--font-variation-narrow);
 }
 
 @media (min-width: 800px) {
   .animatedTitle {
-    font-size: 5rem;
+    font-size: 6rem;
   }
 }
