@@ -171,15 +171,15 @@
 }
 
 .wide {
-  font-variation-settings: var(--font-variation-wide);
+  font-variation-settings: var(--font-variation-wide-animationEnd);
 }
 
 .normal {
-  font-variation-settings: var(--font-variation-normal);
+  font-variation-settings: var(--font-variation-normal-animationEnd);
 }
 
 .narrow {
-  font-variation-settings: var(--font-variation-narrow);
+  font-variation-settings: var(--font-variation-narrow-animationEnd);
 }
 
 @media (min-width: 800px) {

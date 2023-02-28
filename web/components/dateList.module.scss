@@ -132,6 +132,11 @@
     font-variation-settings: var(--font-variation-wide);
     text-transform: uppercase;
     cursor: pointer;
+
+    &:after {
+      content: "↓";
+      float: right;
+    }
   }
 }
 

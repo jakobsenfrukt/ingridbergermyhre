@@ -50,17 +50,17 @@
 
   &.wide {
     p {
-      font-variation-settings: var(--font-variation-wide);
+      font-variation-settings: var(--font-variation-wide-animationEnd);
     }
   }
   &.normal {
     p {
-      font-variation-settings: var(--font-variation-normal);
+      font-variation-settings: var(--font-variation-normal-animationEnd);
     }
   }
   &.narrow {
     p {
-      font-variation-settings: var(--font-variation-narrow);
+      font-variation-settings: var(--font-variation-narrow-animationEnd);
     }
   }
 

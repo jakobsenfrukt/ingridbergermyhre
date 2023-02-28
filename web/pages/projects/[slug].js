@@ -28,7 +28,7 @@ export default function Project ({data}) {
   }
 
   return (
-    <Layout palette={data.color.hex} home={data.home} projects={data.projects} key={data._id}>
+    <Layout palette={data.color.hex} home={data.home} projects={data.projects}>
       <Head>
         <title>{data.title} by {siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />

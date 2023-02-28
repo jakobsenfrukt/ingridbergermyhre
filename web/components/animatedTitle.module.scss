@@ -3,8 +3,6 @@
   max-width: 60rem;
   font-size: 3.7rem;
   margin: 0 auto 2rem;
-  opacity: 0;
-  transition: all 1s ease;
 
   span {
     transition-property: all;
@@ -14,8 +12,6 @@
   }
 
   &[data-inview=true] {
-    opacity: 1;
-
     &.wide span {
       font-variation-settings: var(--font-variation-wide-animationEnd) !important;
     }
@@ -28,6 +24,18 @@
       font-variation-settings: var(--font-variation-narrow-animationEnd) !important;
     }
   }
+}
+
+.wide {
+  font-variation-settings: var(--font-variation-wide-animationEnd);
+}
+
+.normal {
+  font-variation-settings: var(--font-variation-normal-animationEnd);
+}
+
+.narrow {
+  font-variation-settings: var(--font-variation-narrow-animationEnd);
 }
 
 @media (min-width: 800px) {
