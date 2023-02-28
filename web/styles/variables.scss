@@ -31,7 +31,7 @@
   --color-palette: lime;
 
   // font variation settings
-  --font-variation-slim:
+  --font-variation-narrow:
     'wght' 400, /* 100	to 1000 */
     'wdth' 25, /* 25 to 151 */
     'opsz' 10, /* 8 to 144 */
@@ -45,7 +45,7 @@
     'YTAS' 850, /* 649 to 854 – ascender height */
     'YTDE' -280, /* -305 to -98 - descender height */
     'YTFI' 600; /* 560 to 788 */
-   --font-variation-mid:
+   --font-variation-normal:
     'wght' 400, /* 100	to 1000 */
     'wdth' 76, /* 25 to 151 */
     'opsz' 10, /* 8 to 144 */
@@ -75,7 +75,7 @@
     'YTFI' 600; /* 560 to 788 */
 
   // font variation settings
-  --font-variation-slim-animation:
+  --font-variation-narrow-animation:
    'wght' 400, /* 100	to 1000 */
    'wdth' 25, /* 25 to 151 */
    'opsz' 10, /* 8 to 144 */
@@ -89,7 +89,7 @@
    'YTAS' 650, /* 649 to 854 – ascender height */
    'YTDE' -280, /* -305 to -98 - descender height */
    'YTFI' 600; /* 560 to 788 */
-  --font-variation-mid-animation:
+  --font-variation-normal-animation:
    'wght' 400, /* 100	to 1000 */
    'wdth' 76, /* 25 to 151 */
    'opsz' 10, /* 8 to 144 */

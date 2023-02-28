@@ -1,6 +1,6 @@
 .animatedTitle {
   position: relative;
-  max-width: 40rem;
+  max-width: 60rem;
   font-size: 4rem;
   margin: 0 auto 2rem;
   opacity: 0;
@@ -16,15 +16,15 @@
 }
 
 .normal {
-  font-variation-settings: var(--font-variation-slim-animation);
+  font-variation-settings: var(--font-variation-normal);
 }
 
 .narrow {
-  font-variation-settings: var(--font-variation-slim);
+  font-variation-settings: var(--font-variation-narrow);
 }
 
 @media (min-width: 800px) {
   .animatedTitle {
-    font-size: 6rem;
+    font-size: 5rem;
   }
 }

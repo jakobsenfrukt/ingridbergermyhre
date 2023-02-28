@@ -10,10 +10,10 @@
 
   span {
     &:nth-of-type(3) {
-      font-variation-settings: var(--font-variation-slim);
+      font-variation-settings: var(--font-variation-narrow);
     }
     &:nth-of-type(2) {
-      font-variation-settings: var(--font-variation-mid);
+      font-variation-settings: var(--font-variation-normal);
     }
     &:nth-of-type(1) {
       font-variation-settings: var(--font-variation-wide);
@@ -33,7 +33,7 @@
   background: var(--color-palette);
   width: 100%;
   z-index: 1000;
-  font-variation-settings: var(--font-variation-slim);
+  font-variation-settings: var(--font-variation-narrow);
   font-size: 1.6rem;
   line-height: 1;
   text-transform: uppercase;
@@ -80,7 +80,7 @@
     text-transform: uppercase;
     text-align: center;
     line-height: 1.2;
-    font-variation-settings: var(--font-variation-slim);
+    font-variation-settings: var(--font-variation-narrow);
   }
 
   .upcoming {
@@ -155,13 +155,13 @@
         content: "/";
         display: inline-block;
         margin: 0 .25em;
-        font-variation-settings: var(--font-variation-mid);
+        font-variation-settings: var(--font-variation-normal);
       }
       &:nth-of-type(1) {
-        font-variation-settings: var(--font-variation-slim);
+        font-variation-settings: var(--font-variation-narrow);
       }
       &:nth-of-type(2) {
-        font-variation-settings: var(--font-variation-mid);
+        font-variation-settings: var(--font-variation-normal);
       }
       &:nth-of-type(3) {
         font-variation-settings: var(--font-variation-wide);

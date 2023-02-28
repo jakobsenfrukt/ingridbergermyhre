@@ -33,7 +33,7 @@
 
   h2 {
     grid-column: 1 / span 4;
-    font-size: 4.7rem;
+    font-size: 3rem;
     margin: .5rem 0 1rem;
     display: flex;
     align-items: flex-start;
@@ -55,12 +55,12 @@
   }
   &.normal {
     p {
-      font-variation-settings: var(--font-variation-slim-animation);
+      font-variation-settings: var(--font-variation-normal);
     }
   }
   &.narrow {
     p {
-      font-variation-settings: var(--font-variation-slim);
+      font-variation-settings: var(--font-variation-narrow);
     }
   }
 
@@ -77,7 +77,7 @@
   }
 
   .year {
-    font-size: 2.6rem;
+    font-size: 1.6rem;
     font-variation-settings: var(--font-variation-wide-thin);
   }
   .research {
@@ -102,6 +102,17 @@
   position: absolute;
   top: 80%;
   bottom: 0;
+}
+
+@media (min-width: 800px) {
+  .project {
+    h2 {
+      font-size: 4.7rem;
+    }
+    .year {
+      font-size: 2.6rem;
+    }
+  }
 }
 
 @media (min-width: 1200px) {

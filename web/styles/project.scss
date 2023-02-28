@@ -176,11 +176,11 @@
 }
 
 .normal {
-  font-variation-settings: var(--font-variation-slim-animation);
+  font-variation-settings: var(--font-variation-normal);
 }
 
 .narrow {
-  font-variation-settings: var(--font-variation-slim);
+  font-variation-settings: var(--font-variation-narrow);
 }
 
 @media (min-width: 800px) {
