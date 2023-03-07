@@ -14,7 +14,7 @@ export default function ProjectList ({ projects }) {
       <ul>
       {projects.length > 0 && projects.slice(0, limit).map(
         (project) =>
-          project.slug && (
+          project.slug && !project.archive && (
             <ProjectItem key={project._id} project={project} />
           )
       )}
