@@ -10,7 +10,7 @@ export default function VideoList ({ videos }) {
               <li key={`video-${index}`} className={styles.video}>
                 <h3>{video.title}</h3>
                 {video.description && <p>{video.description}</p>}
-                <a href={video.url}>
+                <a href={video.url} target="_blank">
                   <span>Watch {video.title}</span>
                 </a>
               </li>

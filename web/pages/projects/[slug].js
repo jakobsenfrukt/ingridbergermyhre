@@ -61,6 +61,7 @@ export default function Project ({data}) {
           {data.imageGallery && <ImageGallery gallery={data.imageGallery} />}
         </div>
         <div className="project-logos">
+          {photographers() && <p className="photographers">Photos by: {photographers()}</p>}
           <ul>
             {data.logos && data.logos.length > 0 && data.logos.map(
               (logo) =>
@@ -71,7 +72,6 @@ export default function Project ({data}) {
                 )
             )}
           </ul>
-          {photographers() && <p>Photos by: {photographers()}</p>}
         </div>
       </section>
     </Layout>

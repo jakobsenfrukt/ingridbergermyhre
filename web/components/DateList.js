@@ -46,10 +46,13 @@ export default function DateList({ dates }) {
             ({ date, monthOnly, venue, city, status, url }, index) =>
               date && (
                 <li key={index} className={styles.upcoming}>
-                  {monthOnly ? <span className={styles.date}>{new Date(date).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}</span> : <span className={styles.date}>{new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>}
+                  <div className={styles.date}>
+                    {monthOnly ? <span>{new Date(date).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}</span> : <span>{new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>}
+
+                    {status && status !== 'default' && <span className={styles.status} data-status={status}>{replaceHyphens(status)}</span>}
+                  </div>
                   {venue && <span className={styles.venue}>{venue}, </span>}
                   <span className={styles.city}>{city}</span>
-                  {status && status !== 'default' && <span className={styles.status} data-status={status}>{replaceHyphens(status)}</span>}
                   {url && isUpcoming(date) && status !== 'cancelled' && <a href={url} target="_blank">
                     <svg className={styles.linkIcon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
                       <title>
@@ -68,10 +71,13 @@ export default function DateList({ dates }) {
             ({ date, monthOnly, venue, city, status }, index) =>
               date && (
                 <li key={index} className={styles.passed}>
-                  {monthOnly ? <span className={styles.date}>{new Date(date).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}</span> : <span className={styles.date}>{new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>}
+                  <div className={styles.date}>
+                    {monthOnly ? <span>{new Date(date).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}</span> : <span>{new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>}
+
+                    {status && status !== 'default' && <span className={styles.status} data-status={status}>{replaceHyphens(status)}</span>}
+                  </div>
                   {venue && <span className={styles.venue}>{venue}, </span>}
                   <span className={styles.city}>{city}</span>
-                  {status && status !== 'default' && <span className={styles.status} data-status={status}>{replaceHyphens(status)}</span>}
                 </li>
               )
           )}
