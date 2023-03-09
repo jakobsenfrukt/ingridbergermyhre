@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout, { siteTitle } from '../components/Layout'
 import Image from '../components/Image'
+import QuoteList from '../components/QuoteList'
 import {PortableText} from '@portabletext/react'
 
 const About = ({ data }) => {
@@ -21,6 +22,9 @@ const About = ({ data }) => {
         <div className="about-content">
           {data.image && <Image image={data.image} showCredit />}
           <div>{data.body && <PortableText value={data.body} />}</div>
+        </div>
+        <div className="about-quotes">
+          {data.quotes && <QuoteList quotes={data.quotes} />}
         </div>
       </section>
     </Layout>
