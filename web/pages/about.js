@@ -13,6 +13,7 @@ const About = ({ data }) => {
       <Head>
         <title>About Ingrid Berger Myhre</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content={data.intro} />
       </Head>
 
       <section>

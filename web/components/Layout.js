@@ -20,8 +20,9 @@ export default function Layout({ children, palette, home, projects }) {
   return (
     <div id="layout" className={styles.layout} style={{ '--color-palette': palette }}>
       <Head>
+        <title>{siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="og:title" content={siteTitle} />
+        <meta name="description" content={home.intro} />
       </Head>
 
       <header id="header" className={styles.header}>

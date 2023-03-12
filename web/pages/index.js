@@ -11,6 +11,7 @@ const Home = ({ data }) => {
       <Head>
         <title>{siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content={data.home.intro} />
       </Head>
 
       <Upcoming projects={data.projects} limit="6" />

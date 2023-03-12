@@ -49,10 +49,31 @@
   }
 
   a {
-    display: block;
+    display: inline-block;
     font-size: 1.2rem;
     font-variation-settings: var(--font-variation-wide-animationEnd);
     text-transform: uppercase;
+    position: relative;
+
+    &:before {
+      content: " ";
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 1rem;
+      background: var(--color-palette);
+      position: absolute;
+      left: -1.4rem;
+      bottom: 0.2rem;
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+
+    &:hover {
+      &:before {
+        opacity: 1;
+      }
+    }
   }
 }
 

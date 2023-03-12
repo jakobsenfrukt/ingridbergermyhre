@@ -32,6 +32,7 @@ export default function Project ({data}) {
       <Head>
         <title>{data.title} by {siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content={data.intro} />
       </Head>
 
       <div className="project-hero">
