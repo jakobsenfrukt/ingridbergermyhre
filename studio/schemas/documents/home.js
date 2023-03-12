@@ -27,7 +27,62 @@ export default {
     {
       title: 'Contact',
       name: 'contact',
-      type: 'body'
-    },
+      type: 'object',
+      fields: [
+        {
+          title: 'Contact text',
+          name: 'text',
+          type: 'text',
+          rows: 4
+        },
+        {
+          title: 'Contact links',
+          name: 'links',
+          type: 'array',
+          of: [
+            {
+              title: 'Email',
+              name: 'emailLink',
+              type: 'object',
+              fields: [
+                {
+                  title: 'Title',
+                  name: 'title',
+                  type: 'string'
+                },
+                {
+                  title: 'Email',
+                  name: 'email',
+                  type: 'email'
+                }
+              ]
+            },
+            {
+              title: 'Link',
+              name: 'link',
+              type: 'object',
+              fields: [
+                {
+                  title: 'Title',
+                  name: 'title',
+                  type: 'string'
+                },
+                {
+                  title: 'Link text',
+                  name: 'linkText',
+                  type: 'string'
+                },
+                {
+                  title: 'URL',
+                  description: 'Paste the full URL to the venue or ticket website, including https:// etc.',
+                  name: 'url',
+                  type: 'string'
+                }
+              ]
+            },
+          ]
+        },
+      ]
+    }
   ]
 }
