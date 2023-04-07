@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react'
 import styles from './dateList.module.scss'
 
 export function isUpcoming(rawDate) {
-  var now = new Date();
-  var date = new Date(rawDate);
+  var now = new Date().setHours(0, 0, 0, 0);
+  var date = new Date(rawDate).setHours(0, 0, 0, 0);
 
-  if (date > now) {
+  if (date >= now) {
     return true
   }
   return false
