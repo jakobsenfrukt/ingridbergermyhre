@@ -1,6 +1,5 @@
 import styles from './animatedTitle.module.scss'
 import { useInView } from 'react-intersection-observer'
-import { useEffect } from 'react'
 import AnimatedLetter from './AnimatedLetter'
 
 export default function AnimatedTitle ({ content, width }) {
@@ -11,7 +10,7 @@ export default function AnimatedTitle ({ content, width }) {
       {content.length > 0 && content.split("").map(
         (letter, index) =>
           (
-            <AnimatedLetter key={index} letter={letter} width={width} />
+            <AnimatedLetter key={index} letter={letter} width={width} inview={isInView} />
           )
       )}
       <div className={styles.observer} ref={observer}></div>

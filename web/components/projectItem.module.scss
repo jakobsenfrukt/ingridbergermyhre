@@ -29,6 +29,11 @@
   figure {
     grid-column: 1 / span 4;
     margin: 0 3rem;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   h2 {

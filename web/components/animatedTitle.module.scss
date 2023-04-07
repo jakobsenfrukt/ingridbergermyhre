@@ -11,20 +11,6 @@
     text-transform: uppercase;
   }
 
-  &[data-inview=true] {
-    &.wide span {
-      font-variation-settings: var(--font-variation-wide-animationEnd) !important;
-    }
-    
-    &.normal span {
-      font-variation-settings: var(--font-variation-normal-animationEnd) !important;
-    }
-    
-    &.narrow span {
-      font-variation-settings: var(--font-variation-narrow-animationEnd) !important;
-    }
-  }
-
   &.small {
     font-size: inherit;
     margin: 0;
@@ -52,6 +38,22 @@
 
     &.small {
       font-size: inherit;
+    }
+  }
+}
+
+.letter {
+  &[data-inview=true] {
+    &.wide {
+      font-variation-settings: var(--font-variation-wide-animationEnd) !important;
+    }
+    
+    &.normal {
+      font-variation-settings: var(--font-variation-normal-animationEnd) !important;
+    }
+    
+    &.narrow {
+      font-variation-settings: var(--font-variation-narrow-animationEnd) !important;
     }
   }
 }

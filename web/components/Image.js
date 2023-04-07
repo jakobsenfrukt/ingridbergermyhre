@@ -1,6 +1,10 @@
 import styles from './imageGallery.module.scss'
 import { useInView } from 'react-intersection-observer'
 
+/* testing */
+import Img from 'next/future/image';
+import { useNextSanityImage } from 'next-sanity-image';
+
 import client from '../client'
 import imageUrlBuilder from '@sanity/image-url'
 function urlFor (source) {
@@ -10,7 +14,8 @@ function urlFor (source) {
 export default function Image ({ image, showCredit }) {
   const { ref: observer, inView: IsInView } = useInView({ triggerOnce: false })
 
-  /* style={{ 'background-image': `url(${image.asset.metadata.lqip})`, 'padding-top': `calc(100% / ${image.asset.metadata.dimensions.aspectRatio})`, 'background-size': '100%' }} */
+  /* testing */
+  const imageProps = useNextSanityImage(client, image);
 
   return (
     <figure 
@@ -18,13 +23,20 @@ export default function Image ({ image, showCredit }) {
       className={styles.image} 
     >
       <div className={styles.observer} ref={observer}></div>
-      <img
+      {/*<img
         src={urlFor(image)
           .width(1920)
           .url()}
         alt={image.alt}
         loading="lazy"
+        />*/}
+
+      <Img
+        {...imageProps}
+        alt={image.alt}
       />
+
+
       {showCredit && image.credit && <figcaption className={styles.caption}>Photo: {image.credit}</figcaption>}
     </figure>
   )

@@ -1,22 +1,20 @@
 import styles from './animatedTitle.module.scss'
 import { useState, useEffect } from 'react';
 
-export default function AnimatedLetter ({ letter, width }) {
+export default function AnimatedLetter ({ letter, width, inview }) {
 
   const [style, setStyle] = useState(undefined)
 
-  useEffect(() => {
-    console.log('useEffect ran')
-
-    function random(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-    
-    function calculateStyle(width) {
+  function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  
+  function calculateStyle(width) {
+    if (!inview) {
       if (width === 'narrow') {
         return {
           transitionDelay: `${random(0.2, 0.6)}s`,
-          transitionDuration: `${random(1, 3)}s`,
+          transitionDuration: `${random(0.6, 2)}s`,
           fontVariationSettings: `
             'wght' 400, /* 100	to 1000 */
             'wdth' 25, /* 25 to 151 */
@@ -26,8 +24,8 @@ export default function AnimatedLetter ({ letter, width }) {
             'XTRA' 420, /* 323 to 603 */
             'XOPQ' 90, /* 27 to 175 */
             'YOPQ' 68, /* 25 to 135 */
-            'YTLC' ${random(416, 500)}, /* 416 to 570 - lowercase height */
-            'YTUC' ${random(528, 660)}, /* 528 to 760 - uppercase height */
+            'YTLC' ${random(416, 440)}, /* 416 to 570 - lowercase height */
+            'YTUC' ${random(528, 580)}, /* 528 to 760 - uppercase height */
             'YTAS' ${random(649, 700)}, /* 649 to 854 - ascender height */
             'YTDE' ${random(-305, -200)}, /* -305 to -98 - descender height */
             'YTFI' 600 /* 560 to 788 */
@@ -37,7 +35,7 @@ export default function AnimatedLetter ({ letter, width }) {
       if (width === 'normal') {
         return {
           transitionDelay: `${random(0.2, 0.6)}s`,
-          transitionDuration: `${random(1, 3)}s`,
+          transitionDuration: `${random(0.6, 2)}s`,
           fontVariationSettings: `
             'wght' 400, /* 100	to 1000 */
             'wdth' 76, /* 25 to 151 */
@@ -47,8 +45,8 @@ export default function AnimatedLetter ({ letter, width }) {
             'XTRA' 520, /* 323 to 603 */
             'XOPQ' 90, /* 27 to 175 */
             'YOPQ' 68, /* 25 to 135 */
-            'YTLC' ${random(416, 500)}, /* 416 to 570 - lowercase height */
-            'YTUC' ${random(528, 660)}, /* 528 to 760 - uppercase height */
+            'YTLC' ${random(416, 440)}, /* 416 to 570 - lowercase height */
+            'YTUC' ${random(528, 580)}, /* 528 to 760 - uppercase height */
             'YTAS' ${random(649, 700)}, /* 649 to 854 - ascender height */
             'YTDE' ${random(-305, -200)}, /* -305 to -98 - descender height */
             'YTFI' 600 /* 560 to 788 */
@@ -58,7 +56,7 @@ export default function AnimatedLetter ({ letter, width }) {
       if (width === 'wide') {
         return {
           transitionDelay: `${random(0.2, 0.6)}s`,
-          transitionDuration: `${random(0.6, 1)}s`,
+          transitionDuration: `${random(0.6, 2)}s`,
           fontVariationSettings: `
             'wght' 400, /* 100	to 1000 */
             'wdth' 151, /* 25 to 151 */
@@ -68,8 +66,8 @@ export default function AnimatedLetter ({ letter, width }) {
             'XTRA' 603, /* 323 to 603 */
             'XOPQ' 90, /* 27 to 175 */
             'YOPQ' 68, /* 25 to 135 */
-            'YTLC' ${random(416, 500)}, /* 416 to 570 - lowercase height */
-            'YTUC' ${random(528, 660)}, /* 528 to 760 - uppercase height */
+            'YTLC' ${random(416, 440)}, /* 416 to 570 - lowercase height */
+            'YTUC' ${random(528, 580)}, /* 528 to 760 - uppercase height */
             'YTAS' ${random(649, 700)}, /* 649 to 854 - ascender height */
             'YTDE' ${random(-305, -200)}, /* -305 to -98 - descender height */
             'YTFI' 600 /* 560 to 788 */
@@ -77,11 +75,13 @@ export default function AnimatedLetter ({ letter, width }) {
         }
       }
     }
+  }
 
-    //setStyle(calculateStyle(width))
+  useEffect(() => {
+    setStyle(calculateStyle(width))
   }, [])
 
   return (
-    <span style={style}>{letter}</span>
+    <span className={`${width} ${styles.letter}`} style={style} data-inview={inview}>{letter}</span>
   )
 }
