@@ -3,6 +3,7 @@
   max-width: 60rem;
   font-size: 3.7rem;
   margin: 0 auto 2rem;
+  z-index: 100;
 
   span {
     transition-property: all;
@@ -38,22 +39,6 @@
 
     &.small {
       font-size: inherit;
-    }
-  }
-}
-
-.letter {
-  &[data-inview=true] {
-    &.wide {
-      font-variation-settings: var(--font-variation-wide-animationEnd) !important;
-    }
-    
-    &.normal {
-      font-variation-settings: var(--font-variation-normal-animationEnd) !important;
-    }
-    
-    &.narrow {
-      font-variation-settings: var(--font-variation-narrow-animationEnd) !important;
     }
   }
 }
