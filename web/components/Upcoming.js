@@ -19,6 +19,10 @@ export default function Upcoming({ projects, limit }) {
     setMaxLimit(1000);
   }
 
+  function collapse(){
+    setMaxLimit(limit);
+  }
+
 
 
   return (
@@ -38,6 +42,7 @@ export default function Upcoming({ projects, limit }) {
         )}
       </ul>
       {maxLimit && maxLimit < upcomingDates.length && <button onClick={showAll}>&darr; &nbsp; Show full tour list &nbsp; &darr;</button>}
+      {maxLimit === 1000 && <button onClick={collapse}>&uarr; &nbsp; Hide full tour list &nbsp; &uarr;</button>}
     </div>
   )
 }

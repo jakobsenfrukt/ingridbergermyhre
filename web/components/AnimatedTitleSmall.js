@@ -10,7 +10,7 @@ export default function AnimatedTitleSmall ({ content, width }) {
       {content.length > 0 && content.split("").map(
         (letter, index) =>
           (
-            <AnimatedLetter key={index} letter={letter} width={width} inview={isInView} />
+            <span className={`animatedLetter ${width}`} key={index}><span>{letter}</span></span>
           )
       )}
       <div className={styles.observer} ref={observer}></div>

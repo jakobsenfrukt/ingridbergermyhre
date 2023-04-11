@@ -18,7 +18,7 @@ export default function ProjectList ({ project }) {
   })
 
   return (
-    <li className={`${styles.project} ${styles[project.font]}`} style={{ '--color-palette': project.color.hex }} data-inview={ProjectIsInView}>
+    <li className={`projectItem ${styles.project} ${styles[project.font]}`} style={{ '--color-palette': project.color.hex }} data-inview={ProjectIsInView}>
       {project.image && <Image image={project.image} />}
       <h2 className={project.font}>
         <AnimatedTitleSmall content={project.title} width={project.font} />

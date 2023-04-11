@@ -1,5 +1,9 @@
 .animatedLetter {
   position: relative;
+  font-size: 6rem;
+  transition-property: font-variation-settings;
+  transition-duration: .6s;
+  transition-timing-function: ease;
 
   &[data-inview=true] {
     &.wide {
@@ -30,7 +34,7 @@
 
     &.narrow {
       transition-delay: calc((random(5) + 1) * 0.1) + s;
-      transition-duration: calc((random(20) + 1) * 0.1) + s;
+      transition-duration: calc((random(10) + 1) * 0.1) + s;
       font-variation-settings:
       'wght' 400, /* 100	to 1000 */
       'wdth' 25, /* 25 to 151 */
@@ -49,7 +53,7 @@
 
     &.normal {
       transition-delay: calc((random(5) + 1) * 0.1) + s;
-      transition-duration: calc((random(20) + 1) * 0.1) + s;
+      transition-duration: calc((random(10) + 1) * 0.1) + s;
       font-variation-settings:
       'wght' 400, /* 100	to 1000 */
       'wdth' 76, /* 25 to 151 */
@@ -68,7 +72,7 @@
 
     &.wide {
       transition-delay: calc((random(5) + 1) * 0.1) + s;
-      transition-duration: calc((random(20) + 1) * 0.1) + s;
+      transition-duration: calc((random(10) + 1) * 0.1) + s;
       font-variation-settings:
       'wght' 400, /* 100	to 1000 */
       'wdth' 151, /* 25 to 151 */
