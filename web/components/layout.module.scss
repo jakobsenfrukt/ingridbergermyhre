@@ -67,7 +67,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  background: linear-gradient(transparent 50%, var(--color-palette));
+  background: linear-gradient(rgba(255, 255, 255, 0) 50%, var(--color-palette));
 
   .upcoming {
     align-self: flex-end;
@@ -81,7 +81,7 @@
     z-index: 1001;
     outline: none;
     border: none;
-    background: transparent;
+    background: rgba(255, 255, 255, 0);
     padding: 0;
     width: 2rem;
     height: 2rem;
@@ -113,7 +113,7 @@
 
     &[data-show=true] {
       span {
-        background: transparent;
+        background: rgba(255, 255, 255, 0);
         &:before {
           top: auto;
           transform: rotate(-45deg);

@@ -1,0 +1,111 @@
+
+.animatedLetter {
+  position: relative;
+  font-size: 5.5rem;
+  transition-property: font-variation-settings;
+  transition-duration: .6s;
+  transition-timing-function: ease;
+
+  &.wide {
+    font-variation-settings: var(--font-variation-wide-animationEnd);
+  }
+  
+  &.normal {
+    font-variation-settings: var(--font-variation-normal-animationEnd);
+  }
+  
+  &.narrow {
+    font-variation-settings: var(--font-variation-narrow-animationEnd);
+  }
+}
+
+@function randomNum($min, $max) {
+  $rand: random();
+  $randomNum: $min + floor($rand * (($max - $min) + 1));
+  
+  @return $randomNum;
+}
+
+@for $i from 1 through 30 {
+  .projectItem .animatedLetter:nth-child(#{$i}) { 
+    //top: random(400) - 100 + px;
+    //left: random(400) - 100 + px;
+
+    &.narrow {
+      transition-delay: calc((random(5) + 1) * 0.1) + s;
+      transition-duration: calc((random(10) + 1) * 0.1) + s;
+      font-variation-settings:
+      'wght' 400, /* 100	to 1000 */
+      'wdth' 25, /* 25 to 151 */
+      'opsz' 10, /* 8 to 144 */
+      'GRAD' 0, /* -200 to 150 */
+      'slnt' 0, /* -10 to 0 */
+      'XTRA' 420, /* 323 to 603 */
+      'XOPQ' 90, /* 27 to 175 */
+      'YOPQ' 68, /* 25 to 135 */
+      'YTLC' #{randomNum(416, 440)}, /* 416 to 570 - lowercase height */
+      'YTUC' #{randomNum(528, 580)}, /* 528 to 760 - uppercase height */
+      'YTAS' #{randomNum(649, 700)}, /* 649 to 854 - ascender height */
+      'YTDE' #{randomNum(-150, -100)}, /* -305 to -98 - descender height */
+      'YTFI' 600 /* 560 to 788 */
+    }
+
+    &.normal {
+      transition-delay: calc((random(5) + 1) * 0.1) + s;
+      transition-duration: calc((random(10) + 1) * 0.1) + s;
+      font-variation-settings:
+      'wght' 400, /* 100	to 1000 */
+      'wdth' 76, /* 25 to 151 */
+      'opsz' 10, /* 8 to 144 */
+      'GRAD' 0, /* -200 to 150 */
+      'slnt' 0, /* -10 to 0 */
+      'XTRA' 520, /* 323 to 603 */
+      'XOPQ' 90, /* 27 to 175 */
+      'YOPQ' 68, /* 25 to 135 */
+      'YTLC' #{randomNum(416, 440)}, /* 416 to 570 - lowercase height */
+      'YTUC' #{randomNum(528, 580)}, /* 528 to 760 - uppercase height */
+      'YTAS' #{randomNum(649, 700)}, /* 649 to 854 - ascender height */
+      'YTDE' #{randomNum(-150, -100)}, /* -305 to -98 - descender height */
+      'YTFI' 600 /* 560 to 788 */
+    }
+
+    &.wide {
+      transition-delay: calc((random(5) + 1) * 0.1) + s;
+      transition-duration: calc((random(10) + 1) * 0.1) + s;
+      font-variation-settings:
+      'wght' 400, /* 100	to 1000 */
+      'wdth' 151, /* 25 to 151 */
+      'opsz' 10, /* 8 to 144 */
+      'GRAD' 0, /* -200 to 150 */
+      'slnt' 0, /* -10 to 0 */
+      'XTRA' 603, /* 323 to 603 */
+      'XOPQ' 90, /* 27 to 175 */
+      'YOPQ' 68, /* 25 to 135 */
+      'YTLC' #{randomNum(416, 440)}, /* 416 to 570 - lowercase height */
+      'YTUC' #{randomNum(528, 580)}, /* 528 to 760 - uppercase height */
+      'YTAS' #{randomNum(649, 700)}, /* 649 to 854 - ascender height */
+      'YTDE' #{randomNum(-150, -100)}, /* -305 to -98 - descender height */
+      'YTFI' 600 /* 560 to 788 */
+    }
+  }
+}
+
+.projectItem[data-inview=true] .animatedLetter {
+  position: relative;
+  font-size: 5.5rem;
+  transition-property: font-variation-settings;
+  transition-duration: .6s;
+  transition-timing-function: ease;
+
+  &.wide {
+    font-variation-settings: var(--font-variation-wide-animationEnd);
+  }
+  
+  &.normal {
+    font-variation-settings: var(--font-variation-normal-animationEnd);
+  }
+  
+  &.narrow {
+    font-variation-settings: var(--font-variation-narrow-animationEnd);
+  }
+}

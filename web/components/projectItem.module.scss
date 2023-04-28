@@ -3,7 +3,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-bottom: 3rem;
-  transition: all .3s ease;
 
   &:before {
     content: "";
@@ -14,9 +13,9 @@
     right: 0;
     bottom: 0;
     z-index: -1;
-    background: radial-gradient(var(--color-palette) 20%, transparent 70%);
+    background: radial-gradient(var(--color-palette) 20%, rgba(255, 255, 255, 0) 70%);
     opacity: 0;
-    transition: all 6s ease;
+    transition: opacity 6s ease;
   }
 
   &[data-inview=true] {
@@ -45,7 +44,6 @@
     gap: 1rem;
     justify-content: space-between;
     font-weight: normal;
-    transition: all .6s ease;
     position: relative;
   }
 
@@ -99,7 +97,7 @@
 
 .observer {
   position: absolute;
-  top: 0;
+  top: 50%;
   bottom: 0;
 }
 
