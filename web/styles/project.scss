@@ -266,7 +266,6 @@
 .animatedLetter {
   display: inline-block;
   position: relative;
-  font-size: 5.5rem;
   transition: transform 2s ease-out;
 
   &.wide {
@@ -290,11 +289,15 @@
 }
 
 @for $i from 1 through 30 {
-  .projectItem .animatedLetter:nth-child(#{$i}) { 
+  .animatedLetter:nth-child(#{$i}) { 
     transform: translateY(random(60) - 30 + px) scaleY(.8);
   }
 }
 
 .projectItem[data-inview=true] .animatedLetter {
+  transform: translateY(0) scaleY(1);
+}
+
+.animatedTitle[data-inview=true] .animatedLetter {
   transform: translateY(0) scaleY(1);
 }

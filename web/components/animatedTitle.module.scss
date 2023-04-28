@@ -1,12 +1,11 @@
 .animatedTitle {
   position: relative;
   max-width: 60rem;
-  font-size: 3.7rem;
+  font-size: 4rem;
   margin: 0 auto 2rem;
   z-index: 100;
 
   &.small {
-    font-size: inherit;
     margin: 0;
     cursor: pointer;
   }
@@ -24,12 +23,8 @@
   font-variation-settings: var(--font-variation-narrow-animationEnd);
 }
 
-@media (min-width: 800px) {
+@media (min-width: 400px) {
   .animatedTitle {
-    font-size: 6rem;
-
-    &.small {
-      font-size: inherit;
-    }
+    font-size: 5.5rem;
   }
 }
