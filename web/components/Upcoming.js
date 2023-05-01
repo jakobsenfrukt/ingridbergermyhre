@@ -19,6 +19,10 @@ export default function Upcoming({ projects, limit }) {
     setMaxLimit(1000);
   }
 
+  function collapse(){
+    setMaxLimit(limit);
+  }
+
 
 
   return (
@@ -32,12 +36,13 @@ export default function Upcoming({ projects, limit }) {
                 {event.date.monthOnly ? <span className={styles.date}>{new Date(event.date.date).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}</span> : <span className={styles.date}>{new Date(event.date.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>}
                 <span className={styles.title}>{event.title}</span>
                 {event.date.venue && event.date.city && <span className={styles.venue}>{event.date.venue}, {event.date.city}</span>}
-                {event.slug && <Link href="/projects/[slug]" as={`/projects/${event.slug.current}`}><span>More info</span></Link>}
+                {event.slug && <Link href="/projects/[slug]" as={`/projects/${event.slug.current}`}><a><span>More info</span></a></Link>}
               </li>
             )
         )}
       </ul>
       {maxLimit && maxLimit < upcomingDates.length && <button onClick={showAll}>&darr; &nbsp; Show full tour list &nbsp; &darr;</button>}
+      {maxLimit === 1000 && <button onClick={collapse}>&uarr; &nbsp; Hide full tour list &nbsp; &uarr;</button>}
     </div>
   )
 }

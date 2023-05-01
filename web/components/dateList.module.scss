@@ -134,8 +134,12 @@
     text-transform: uppercase;
     cursor: pointer;
 
-    &:after {
+    &.showMore:after {
       content: "↓";
+      float: right;
+    }
+    &.showLess:after {
+      content: "↑";
       float: right;
     }
   }

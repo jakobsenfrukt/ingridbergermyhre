@@ -26,7 +26,7 @@ export default function Layout({ children, palette, home, projects }) {
       </Head>
 
       <header id="header" className={styles.header}>
-        <Link href="/" className={styles.logo}><h1><span>Ingrid</span> <span>Berger</span> <span>Myhre</span></h1></Link>
+        <Link href="/"><a className={styles.logo}><h1><span>Ingrid</span> <span>Berger</span> <span>Myhre</span></h1></a></Link>
         <nav className={styles.siteNav}>
           <button onClick={toggleMenu} data-label="Show menu" data-show={showMenu}>
             <span></span>
@@ -34,7 +34,7 @@ export default function Layout({ children, palette, home, projects }) {
           <ul data-show={showMenu}>
             <li><Link href="/">Home</Link></li>
             <li><Link href="/about">About</Link></li>
-            <li><Link href="#contact" onClick={closeMenu}>Contact</Link></li>
+            <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
           </ul>
         </nav>
       </header>

@@ -32,6 +32,12 @@ export default function DateList({ dates }) {
     setPreviouslyLimit(newLimit - upcomingDates.length)
   }
 
+  function collapse() {
+    const newLimit = 10
+    setUpcomingLimit(newLimit)
+    setPreviouslyLimit(newLimit - upcomingDates.length)
+  }
+
   function replaceHyphens(string) {
     var newString = string.replace(/-/g, ' ')
     return newString
@@ -83,7 +89,8 @@ export default function DateList({ dates }) {
           )}
         </ul></div>)}
 
-        {datesCount > upcomingLimit && <button onClick={showMore}>Show more ({upcomingLimit}/{datesCount})</button>}
+        {datesCount > upcomingLimit && <button onClick={showMore} className={styles.showMore}>Show more ({upcomingLimit}/{datesCount})</button>}
+        {datesCount > 10 && datesCount < upcomingLimit && <button onClick={collapse} className={styles.showLess}>Show less</button>}
     </div>
   )
 }

@@ -12,6 +12,7 @@ import AnimatedTitle from '../../components/AnimatedTitle'
 import {PortableText} from '@portabletext/react'
 
 export default function Project ({data}) {
+  const pageTitle = data.title + " by " + siteTitle
   const photographers = function() {
     let photographerString;
     if (data.image.credit) {
@@ -30,7 +31,7 @@ export default function Project ({data}) {
   return (
     <Layout palette={data.color.hex} home={data.home} projects={data.projects}>
       <Head>
-        <title>{data.title} by {siteTitle}</title>
+        <title>{pageTitle}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={data.intro} />
       </Head>

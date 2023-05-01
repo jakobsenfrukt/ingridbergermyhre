@@ -1,7 +1,7 @@
 .upcoming {
   font-size: .8rem;
   line-height: 1.2;
-  padding: 0 var(--spacing-sitepadding);
+  padding: 0 calc(var(--spacing-sitepadding) * 0.5);
   h2 {
     font-size: 1.2rem;
     text-align: center;
