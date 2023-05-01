@@ -1,6 +1,5 @@
 import styles from './animatedTitle.module.scss'
 import { useInView } from 'react-intersection-observer'
-import AnimatedLetter from './AnimatedLetter'
 
 export default function AnimatedTitle ({ content, width }) {
   const { ref: observer, inView: isInView } = useInView({ triggerOnce: false })
