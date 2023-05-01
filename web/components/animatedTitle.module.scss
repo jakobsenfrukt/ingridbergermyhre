@@ -1,7 +1,7 @@
 .animatedTitle {
   position: relative;
   max-width: 60rem;
-  font-size: 4rem;
+  font-size: 3rem;
   margin: 0 auto 2rem;
   z-index: 100;
 
@@ -23,7 +23,13 @@
   font-variation-settings: var(--font-variation-narrow-animationEnd);
 }
 
-@media (min-width: 400px) {
+@media (min-width: 800px) {
+  .animatedTitle {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 600px) {
   .animatedTitle {
     font-size: 5.5rem;
   }

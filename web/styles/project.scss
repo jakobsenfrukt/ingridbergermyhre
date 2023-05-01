@@ -296,7 +296,15 @@
 
 @for $i from 1 through 40 {
   .animatedLetter:nth-child(#{$i}) { 
-    transform: translateY(random(3) - 1.5 + rem) scaleY(.8);
+    transform: translateY(random(4) - 2 + rem) scaleY(.8);
+  }
+}
+
+.animatedLetter {
+  transform-origin: 0 0;
+
+  &:nth-of-type(even) {
+    transform-origin: 100% 100%;
   }
 }
 
