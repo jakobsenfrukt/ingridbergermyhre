@@ -17,7 +17,7 @@ export default function AnimatedTitle ({ content, width }) {
               )}</div>
         )
       )}
-      <div className={styles.observer} ref={observer}></div>
+      <span className={styles.observer} ref={observer}></span>
     </div>
   )
 }

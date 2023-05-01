@@ -98,11 +98,12 @@
       padding: 0;
       display: flex;
       gap: var(--spacing-gap);
+      flex-wrap: wrap;
     }
 
     img {
       filter: grayscale(100);
-      height: 4rem;
+      height: 3rem;
       width: auto;
     }
   }
@@ -174,7 +175,7 @@
 .photographers {
   font-size: .8rem;
   opacity: .6;
-  margin-bottom: 0;
+  margin-bottom: .5rem;
 }
 
 .wide {
@@ -261,12 +262,17 @@
 /* styles for small animated letters */
 .animatedWord {
   display: inline-block;
-  margin-right: .4em;
+  margin-right: .3em;
+  line-height: 1.28;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
 }
 .animatedLetter {
   display: inline-block;
   position: relative;
-  transition: transform 2s ease-out;
+  transition: transform 1.6s ease-out;
 
   &.wide {
     font-variation-settings: var(--font-variation-wide-animationEnd);
@@ -288,16 +294,13 @@
   @return $randomNum;
 }
 
-@for $i from 1 through 30 {
+@for $i from 1 through 40 {
   .animatedLetter:nth-child(#{$i}) { 
-    transform: translateY(random(60) - 30 + px) scaleY(.8);
+    transform: translateY(random(3) - 1.5 + rem) scaleY(.8);
   }
 }
 
-.projectItem[data-inview=true] .animatedLetter {
-  transform: translateY(0) scaleY(1);
-}
-
+.projectItem[data-inview=true] .animatedLetter,
 .animatedTitle[data-inview=true] .animatedLetter {
   transform: translateY(0) scaleY(1);
 }

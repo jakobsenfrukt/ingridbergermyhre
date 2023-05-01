@@ -29,7 +29,7 @@ export default function ProjectList ({ project }) {
       <div className={styles.observer} ref={observer}></div>
       <div className={styles.gradientObserver} ref={gradientObserver}></div>
       <Link href="/projects/[slug]" as={`/projects/${project.slug.current}`}>
-        <a><span>More info</span></a>
+        <a aria-label={"More info about " + project.title}><span>&rarr;</span></a>
       </Link>
     </li>
   )
