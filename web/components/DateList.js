@@ -21,21 +21,21 @@ export default function DateList({ dates }) {
 
   const datesCount = upcomingDates.length + previousDates.length;
 
-  const [upcomingLimit, setUpcomingLimit] = useState(10);
-  const [previouslyLimit, setPreviouslyLimit] = useState(
-    upcomingLimit - upcomingDates.length
-  );
+  const [upcomingLimit, setUpcomingLimit] = useState(6);
+  const [previousLimit, setPreviousLimit] = useState(6);
 
-  function showMore() {
-    const newLimit = upcomingLimit + 10
-    setUpcomingLimit(newLimit)
-    setPreviouslyLimit(newLimit - upcomingDates.length)
+  function showMoreUpcoming() {
+    setUpcomingLimit(upcomingLimit + 6)
+  }
+  function showMorePrevious() {
+    setPreviousLimit(previousLimit + 6)
   }
 
-  function collapse() {
-    const newLimit = 10
-    setUpcomingLimit(newLimit)
-    setPreviouslyLimit(newLimit - upcomingDates.length)
+  function collapseUpcoming() {
+    setUpcomingLimit(6)
+  }
+  function collapsePrevious() {
+    setPreviousLimit(6)
   }
 
   function replaceHyphens(string) {
@@ -70,10 +70,13 @@ export default function DateList({ dates }) {
                 </li>
               )
           )}
-        </ul></div>)}
+        </ul>
+        {upcomingDates.length > upcomingLimit && <button onClick={showMoreUpcoming} className={styles.showMore}>Show more ({upcomingLimit}/{upcomingDates.length})</button>}
+        {upcomingDates.length > 10 && upcomingDates.length < upcomingLimit && <button onClick={collapseUpcoming} className={styles.showLess}>Show less</button>}
+        </div>)}
       {previousDates.length > 0 && (<div><h2>Previously</h2>
         <ul>
-          {previousDates.slice(0, previouslyLimit).map(
+          {previousDates.slice(0, previousLimit).map(
             ({ date, monthOnly, venue, city, status }, index) =>
               date && (
                 <li key={index} className={styles.passed}>
@@ -87,10 +90,10 @@ export default function DateList({ dates }) {
                 </li>
               )
           )}
-        </ul></div>)}
-
-        {datesCount > upcomingLimit && <button onClick={showMore} className={styles.showMore}>Show more ({upcomingLimit}/{datesCount})</button>}
-        {datesCount > 10 && datesCount < upcomingLimit && <button onClick={collapse} className={styles.showLess}>Show less</button>}
+        </ul>
+        {previousDates.length > previousLimit && <button onClick={showMorePrevious} className={styles.showMore}>Show more ({previousLimit}/{previousDates.length})</button>}
+        {previousDates.length > 10 && previousDates.length < previousLimit && <button onClick={collapsePrevious} className={styles.showLess}>Show less</button>}
+        </div>)}
     </div>
   )
 }
