@@ -9,7 +9,7 @@ import {PortableText} from '@portabletext/react'
 
 const About = ({ data }) => {
   return (
-    <Layout home={data.home} projects={data.projects}>
+    <Layout palette={data.color.hex} home={data.home} projects={data.projects}>
       <Head>
         <title>About Ingrid Berger Myhre</title>
         <link rel="icon" href="/favicon.ico" />

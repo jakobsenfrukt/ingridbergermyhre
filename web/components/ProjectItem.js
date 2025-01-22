@@ -12,8 +12,7 @@ export default function ProjectList ({ project }) {
 
   useEffect(() => {
     if (ProjectGradientIsInView) {
-      document.body.style.setProperty('--color-palette', project.color.hex)
-      //document.getElementById('header').style.setProperty('background-color', project.color.hex)
+      document.getElementById("layout").style.setProperty('--color-palette', project.color.hex)
     }
   })
 
