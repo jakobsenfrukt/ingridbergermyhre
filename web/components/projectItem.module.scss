@@ -2,7 +2,11 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: min-content;
   margin-bottom: 3rem;
+  min-height: 60vh;
+  align-items: center;
+  place-content: center;
 
   &:before {
     content: "";
