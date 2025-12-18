@@ -25,6 +25,24 @@ export default {
       }]
     },
     {
+      title: 'Newsletter',
+      name: 'newsletter',
+      type: 'object',
+      fields: [
+        {
+          title: 'Newsletter text',
+          name: 'text',
+          type: 'text',
+          rows: 3
+        },
+        {
+          title: 'URL',
+          name: 'url',
+          type: 'url'
+        },
+      ]
+    },
+    {
       title: 'Contact',
       name: 'contact',
       type: 'object',
@@ -33,7 +51,7 @@ export default {
           title: 'Contact text',
           name: 'text',
           type: 'text',
-          rows: 4
+          rows: 3
         },
         {
           title: 'Contact links',

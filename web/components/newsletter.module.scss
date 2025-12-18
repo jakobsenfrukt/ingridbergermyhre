@@ -1,0 +1,100 @@
+.newsletter {
+  width: 100%;
+  margin-bottom: 2rem;
+  text-align: center;
+  line-height: 1.2;
+  font-variation-settings: var(--font-variation-narrow);
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    font-variation-settings: var(--font-variation-narrow-animationEnd)
+  }
+
+  p {
+    margin: 0 auto 2rem;
+    font-variation-settings: var(--font-variation-normal-animationEnd);
+    font-size: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 2rem 0 3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+    max-width: 70rem;
+    margin: 0 auto 3rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-variation-settings:
+      'wght' 700, /* 100	to 1000 */
+      'wdth' 100, /* 25 to 151 */
+      'opsz' 10, /* 8 to 144 */
+      'GRAD' 0, /* -200 to 150 */
+      'slnt' 0, /* -10 to 0 */
+      'XTRA' 420, /* 323 to 603 */
+      'XOPQ' 90, /* 27 to 175 */
+      'YOPQ' 68, /* 25 to 135 */
+      'YTLC' 560, /* 416 to 570 – lowercase height */
+      'YTUC' 560, /* 528 to 760 – uppercase height */
+      'YTAS' 850, /* 649 to 854 – ascender height */
+      'YTDE' -200, /* -305 to -98 */
+      'YTFI' 600; /* 560 to 788 */
+  }
+
+  a {
+    display: inline-block;
+    font-size: 1rem;
+    font-variation-settings: var(--font-variation-wide-animationEnd);
+    text-transform: uppercase;
+    position: relative;
+    background: var(--color-palette);
+    text-decoration: none;
+    padding: .6em 1.6em; 
+
+    &:before {
+      content: " ";
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 1rem;
+      background: var(--color-palette);
+      position: absolute;
+      left: -1.4rem;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+
+    &:hover {
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .newsletter {
+    ul {
+      text-align: left;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 3rem;
+
+      li {
+        &:nth-of-type(odd) {
+          text-align: right;
+        }
+      }
+    }
+  }
+}

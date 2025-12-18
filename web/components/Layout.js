@@ -5,6 +5,7 @@ import styles from './layout.module.scss';
 import Upcoming from './Upcoming';
 import Contact from './Contact'
 import {PortableText} from '@portabletext/react'
+import Newsletter from "./Newsletter";
 
 export const siteTitle = 'Ingrid Berger Myhre';
 
@@ -42,6 +43,7 @@ export default function Layout({ children, palette, home, projects }) {
       <main className={styles.main}>{children}</main>
 
       <footer id="contact" className={styles.footer}>
+        <Newsletter content={home.newsletter} />
         <Contact content={home.contact} />
         <div className={styles.upcoming}>
           <Upcoming projects={projects} />
