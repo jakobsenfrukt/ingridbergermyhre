@@ -58,26 +58,18 @@
     position: relative;
     background: var(--color-palette);
     text-decoration: none;
-    padding: .6em 1.6em; 
+    padding: .6em 1.6em;
 
-    &:before {
-      content: " ";
-      display: block;
-      width: 1rem;
-      height: 1rem;
-      border-radius: 1rem;
-      background: var(--color-palette);
-      position: absolute;
-      left: -1.4rem;
-      top: 50%;
-      transform: translateY(-50%);
-      opacity: 0;
-      transition: opacity .3s ease;
+    .icon {
+      display: inline-block;
+      vertical-align: middle;
+      width: 0;
+      overflow: hidden;
+      transition: all .3s ease;
     }
-
     &:hover {
-      &:before {
-        opacity: 1;
+      .icon {
+        width: 1rem;
       }
     }
   }
