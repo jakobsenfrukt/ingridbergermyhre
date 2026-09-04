@@ -33,7 +33,7 @@ export default function Layout({ children, palette, home, projects }) {
             <span></span>
           </button>
           <ul data-show={showMenu}>
-            <li><Link href="/">Home</Link></li>
+            <li><Link href="/projects">Projects</Link></li>
             <li><Link href="/about">About</Link></li>
             <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
           </ul>

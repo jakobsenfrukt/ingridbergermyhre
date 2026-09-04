@@ -9,7 +9,7 @@
 
   figure {
     text-align: right;
-    max-width: 400px;
+    max-width: 300px;
   }
   img {
     display: block;
@@ -22,10 +22,10 @@
 
 @media (min-width: 800px) {
   .about-content {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
 
     figure {
-      max-width: none;
+      max-width: 300px;
     }
   }
 }

@@ -1,23 +1,19 @@
 import groq from 'groq'
-import client from '../client'
+import client from '../../client'
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/Layout';
-import Upcoming from '../components/Upcoming';
-import ProjectList from '../components/ProjectList';
-import Intro from '../components/Intro';
+import Layout, { siteTitle } from '../../components/Layout';
+import ProjectList from '../../components/ProjectList';
 
-const Home = ({ data }) => {
+const Projects = ({ data }) => {
   return (
     <Layout palette={data.home.projects[0].color.hex} home={data.home} projects={data.projects}>
       <Head>
-        <title>{siteTitle}</title>
+        <title>Projects by {siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={data.home.intro} />
       </Head>
 
-      {data.home.intro && <Intro text={data.home.intro} />}
-      <Upcoming projects={data.projects} limit="6" />
-      <ProjectList projects={data.home.projects} />
+      <ProjectList projects={data.projects} />
     </Layout>
   )
 }
@@ -35,4 +31,4 @@ export async function getStaticProps() {
   }
 }
 
-export default Home;
+export default Projects;
