@@ -1,28 +1,17 @@
 export default {
-  title: 'Home',
-  name: 'home',
+  title: 'Settings',
+  name: 'settings',
   type: 'document',
   __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'], 
   fields: [
     {
-      title: 'Title',
-      name: 'title',
-      type: 'string'
-    },
-    {
-      title: 'Intro',
-      name: 'intro',
-      type: 'text'
-    },
-    {
-      title: 'Projects',
-      description: 'Order of projects shown on the front page.',
-      name: 'projects',
-      type: 'array',
-      of: [{
-        type: 'reference',
-        to: [{ type: 'project' }]
-      }]
+      title: 'Favicon',
+      description: 'Upload an SVG file to use as the site favicon.',
+      name: 'favicon',
+      type: 'image',
+      options: {
+        accept: 'image/svg+xml'
+      }
     },
     {
       title: 'Newsletter',
@@ -105,7 +94,7 @@ export default {
   ],
   preview: {
     prepare() {
-      return { title: "Home" };
+      return { title: "Settings" };
     },
   },
 }

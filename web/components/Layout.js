@@ -6,10 +6,17 @@ import Upcoming from './Upcoming';
 import Contact from './Contact'
 import {PortableText} from '@portabletext/react'
 import Newsletter from "./Newsletter";
+import client from '../client';
+import imageUrlBuilder from '@sanity/image-url';
+
+const builder = imageUrlBuilder(client);
+function urlFor(source) {
+  return builder.image(source);
+}
 
 export const siteTitle = 'Ingrid Berger Myhre';
 
-export default function Layout({ children, palette, home, projects }) {
+export default function Layout({ children, palette, home, projects, settings }) {
   const [showMenu, setShowMenu] = useState(false);
   function toggleMenu(){
     setShowMenu(!showMenu);
@@ -22,7 +29,14 @@ export default function Layout({ children, palette, home, projects }) {
     <div id="layout" className={styles.layout} style={{ '--color-palette': palette }}>
       <Head>
         <title>{siteTitle}</title>
-        <link rel="icon" href="/favicon.ico" />
+        {settings?.favicon ? (
+          <>
+            <link rel="icon" href={urlFor(settings.favicon).url()} type="image/svg+xml" />
+            <link rel="alternate icon" href="/favicon.ico" />
+          </>
+        ) : (
+          <link rel="icon" href="/favicon.ico" />
+        )}
         <meta name="description" content={home.intro} />
       </Head>
 

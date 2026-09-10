@@ -9,10 +9,9 @@ import {PortableText} from '@portabletext/react'
 
 const About = ({ data }) => {
   return (
-    <Layout palette={data.color.hex} home={data.home} projects={data.projects}>
+    <Layout palette={data.color.hex} home={data.home} projects={data.projects} settings={data.settings}>
       <Head>
         <title>About Ingrid Berger Myhre</title>
-        <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={data.intro} />
       </Head>
 
@@ -37,6 +36,7 @@ export async function getStaticProps() {
     ...,
     'home': *[_type == "home"][0],
     'projects': *[_type == "project" && archive != true] | order(premiereDate desc),
+    'settings': *[_type == "settings"][0]{ favicon },
   }`)
   return {
     props: { data }

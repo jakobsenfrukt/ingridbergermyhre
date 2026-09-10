@@ -29,10 +29,9 @@ export default function Project ({data}) {
   }
 
   return (
-    <Layout palette={data.color.hex} home={data.home} projects={data.projects}>
+    <Layout palette={data.color.hex} home={data.home} projects={data.projects} settings={data.settings}>
       <Head>
         <title>{pageTitle}</title>
-        <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={data.intro} />
       </Head>
 
@@ -84,6 +83,7 @@ const query = groq`*[_type == "project" && slug.current == $slug && archive != t
   ...,
   'home': *[_type == "home"][0],
   'projects': *[_type == "project" && archive != true] | order(premiereDate desc),
+  'settings': *[_type == "settings"][0]{ favicon },
 }`
 
 export async function getStaticPaths() {

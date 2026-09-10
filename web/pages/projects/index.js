@@ -6,10 +6,9 @@ import ProjectList from '../../components/ProjectList';
 
 const Projects = ({ data }) => {
   return (
-    <Layout palette={data.home.projects[0].color.hex} home={data.home} projects={data.projects}>
+    <Layout palette={data.home.projects[0].color.hex} home={data.home} projects={data.projects} settings={data.settings}>
       <Head>
         <title>Projects by {siteTitle}</title>
-        <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={data.home.intro} />
       </Head>
 
@@ -25,6 +24,7 @@ export async function getStaticProps() {
       'projects': projects[]->
     },
     'projects': *[_type == "project" && archive != true] | order(premiereDate desc),
+    'settings': *[_type == "settings"][0]{ favicon },
   }`)
   return {
     props: { data }

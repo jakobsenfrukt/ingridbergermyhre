@@ -2,6 +2,7 @@
 import home from './documents/home'
 import project from './documents/project'
 import about from './documents/about'
+import settings from './documents/settings'
 
 // Import objects
 import projectDate from './objects/projectDate'
@@ -14,6 +15,7 @@ export default [
   home,
   project,
   about,
+  settings,
   // objects
   projectDate,
   imageGallery,
