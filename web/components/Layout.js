@@ -30,10 +30,7 @@ export default function Layout({ children, palette, home, projects, settings }) 
       <Head>
         <title>{siteTitle}</title>
         {settings?.favicon ? (
-          <>
-            <link rel="icon" href={urlFor(settings.favicon).url()} type="image/svg+xml" />
-            <link rel="alternate icon" href="/favicon.ico" />
-          </>
+          <link rel="icon" href={urlFor(settings.favicon).url()} type="image/svg+xml" />
         ) : (
           <link rel="icon" href="/favicon.ico" />
         )}
