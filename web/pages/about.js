@@ -36,7 +36,7 @@ export async function getStaticProps() {
     ...,
     'home': *[_type == "home"][0],
     'projects': *[_type == "project" && archive != true] | order(premiereDate desc),
-    'settings': *[_type == "settings"][0]{ favicon },
+    'settings': *[_type == "settings"][0],
   }`)
   return {
     props: { data }

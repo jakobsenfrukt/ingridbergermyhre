@@ -54,8 +54,8 @@ export default function Layout({ children, palette, home, projects, settings }) 
       <main className={styles.main}>{children}</main>
 
       <footer id="contact" className={styles.footer}>
-        <Newsletter content={home.newsletter} />
-        <Contact content={home.contact} />
+        <Newsletter content={settings.newsletter} />
+        <Contact content={settings.contact} />
         <div className={styles.upcoming}>
           <Upcoming projects={projects} />
         </div>
