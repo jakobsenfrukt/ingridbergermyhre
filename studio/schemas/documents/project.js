@@ -59,6 +59,15 @@ export default {
       ]
     },
     {
+      title: 'Favicon',
+      description: 'Upload an SVG file to use as the project favicon.',
+      name: 'favicon',
+      type: 'image',
+      options: {
+        accept: 'image/svg+xml'
+      }
+    },
+    {
       name: 'color',
       title: 'Color',
       type: 'color',

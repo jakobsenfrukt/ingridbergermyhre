@@ -16,7 +16,7 @@ function urlFor(source) {
 
 export const siteTitle = 'Ingrid Berger Myhre';
 
-export default function Layout({ children, palette, home, projects, settings }) {
+export default function Layout({ children, palette, home, projects, settings, favicon }) {
   const [showMenu, setShowMenu] = useState(false);
   function toggleMenu(){
     setShowMenu(!showMenu);
@@ -29,8 +29,8 @@ export default function Layout({ children, palette, home, projects, settings }) 
     <div id="layout" className={styles.layout} style={{ '--color-palette': palette }}>
       <Head>
         <title>{siteTitle}</title>
-        {settings?.favicon ? (
-          <link rel="icon" href={urlFor(settings.favicon).url()} type="image/svg+xml" />
+        {favicon ? (
+          <link rel="icon" href={urlFor(favicon).url()} type="image/svg+xml" />
         ) : (
           <link rel="icon" href="/favicon.ico" />
         )}

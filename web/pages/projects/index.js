@@ -6,7 +6,7 @@ import ProjectList from '../../components/ProjectList';
 
 const Projects = ({ data }) => {
   return (
-    <Layout palette={data.home.projects[0].color.hex} home={data.home} projects={data.projects} settings={data.settings}>
+    <Layout palette={data.home.projects[0].color.hex} home={data.home} projects={data.projects} settings={data.settings} favicon={data.settings.favicon}>
       <Head>
         <title>Projects by {siteTitle}</title>
         <meta name="description" content={data.home.intro} />

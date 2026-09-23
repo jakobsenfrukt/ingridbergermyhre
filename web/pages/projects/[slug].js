@@ -29,7 +29,7 @@ export default function Project ({data}) {
   }
 
   return (
-    <Layout palette={data.color.hex} home={data.home} projects={data.projects} settings={data.settings}>
+    <Layout palette={data.color.hex} home={data.home} projects={data.projects} settings={data.settings} favicon={data.favicon || data.settings?.favicon}>
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={data.intro} />
