@@ -4,18 +4,18 @@ import styles from './projectList.module.scss'
 import Image from './Image'
 import ProjectItem from './ProjectItem'
 
-export default function ProjectList ({ projects }) {
+export default function ProjectList ({ projects, small }) {
   const [limit, setLimit] = useState(10);
   function increaseLimit(){
     setLimit(limit + 10);
   }
   return (
-    <section className={styles.projects}>
+    <section className={styles.projects} data-small={small}>
       <ul>
       {projects.length > 0 && projects.slice(0, limit).map(
         (project) =>
           project.slug && !project.archive && (
-            <ProjectItem key={project._id} project={project} />
+            <ProjectItem key={project._id} project={project} small={small} />
           )
       )}
       {projects.length > limit && <button className={styles.showmore} onClick={increaseLimit}>Load more projects</button>}

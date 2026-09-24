@@ -6,7 +6,7 @@ import AnimatedTitleSmall from './AnimatedTitleSmall'
 import { useInView } from 'react-intersection-observer'
 
 
-export default function ProjectList ({ project }) {
+export default function ProjectItem ({ project, small }) {
   const { ref: observer, inView: ProjectIsInView } = useInView({ triggerOnce: false })
   const { ref: gradientObserver, inView: ProjectGradientIsInView } = useInView({ triggerOnce: false })
 
@@ -17,8 +17,10 @@ export default function ProjectList ({ project }) {
   })
 
   return (
-    <li className={`projectItem ${styles.project} ${styles[project.font]}`} style={{ '--color-palette': project.color.hex }} data-inview={ProjectIsInView}>
-      {project.image && <Image image={project.image} />}
+    <li className={`projectItem ${styles.project} ${styles[project.font]}`} style={{ '--color-palette': project.color.hex }} data-small={small} data-inview={ProjectIsInView}>
+      <div className={styles.image}>
+        {project.image && <Image image={project.image} />}
+      </div>
       <h2 className={project.font}>
         <AnimatedTitleSmall content={project.title} width={project.font} />
         <span className={styles.year}>{new Date(project.premiereDate).getFullYear()}</span>
@@ -28,7 +30,7 @@ export default function ProjectList ({ project }) {
       <div className={styles.observer} ref={observer}></div>
       <div className={styles.gradientObserver} ref={gradientObserver}></div>
       <Link href="/projects/[slug]" as={`/projects/${project.slug.current}`}>
-        <a aria-label={"More info about " + project.title}><span>&rarr;</span></a>
+        <a aria-label={"More info about " + project.title}></a>
       </Link>
     </li>
   )

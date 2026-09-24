@@ -12,7 +12,7 @@ const Projects = ({ data }) => {
         <meta name="description" content={data.home.intro} />
       </Head>
 
-      <ProjectList projects={data.projects} />
+      <ProjectList projects={data.projects} small />
     </Layout>
   )
 }
