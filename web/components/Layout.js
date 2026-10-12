@@ -6,6 +6,7 @@ import Newsletter from "./Newsletter";
 import client from '../client';
 import imageUrlBuilder from '@sanity/image-url';
 import Header from './Header';
+import Cursor from './Cursor';
 
 const builder = imageUrlBuilder(client);
 function urlFor(source) {
@@ -39,6 +40,8 @@ export default function Layout({ children, palette, home, projects, settings, fa
           <Upcoming projects={projects} />
         </div>
       </footer>
+
+      <Cursor />
     </div>
   );
 }

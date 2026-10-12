@@ -33,29 +33,54 @@
 
 .o {
   font-style: italic;
-  transform: scale(-1, 1) translateX(-.1em);
+}
+
+.o {
+  --base: scale(-1, 1) translateX(-.1em);
+
+  &:nth-of-type(odd) {
+    --base: translateX(-.05em);
+  }
 }
 
 .letter {
+  // the resting pose (see "Forward" below). Logo.js measures this span to know where the letter is
   display: inline-block;
+  transform: var(--pose, );
 }
 
-.ff .letter.r:nth-child(3) {
-  transform: rotate(10deg);
+.shy {
+  // --x/--y/--r are set from Logo.js when the cursor is near, --base is a letter's own tweak (like the mirrored o)
+  display: inline-block;
+  transform: translate(var(--x, 0), var(--y, 0)) rotate(var(--r, 0deg)) var(--base, );
+  transition: transform .4s cubic-bezier(.2, .8, .3, 1);
 }
 
-.ff .letter.w {
-  transform: rotate(10deg);
+.ff .letter {
+  // "Foot Forward" falls over on load: letter n ends up rotated 2n deg and moved down and right.
+  // the drop grows evenly from .4em on the first F to .8em on the d (--n is 1 for the F, 11 for the d).
+  // --fall animates from 0 to 1, --n is the letter's position in "Foot Forward" (set in Logo.js)
+  --drop: calc(var(--fall) * .4em * (var(--n) + 9) / 10);
+  --pose: translate(var(--drop), var(--drop)) rotate(calc(var(--fall) * var(--n) * 2deg));
+  // the d falls first and the rest follow back towards the F, picking up speed like dominoes:
+  // --k counts letters from the d (0 for the d, 10 for the F). the gap between letters shrinks
+  // from about .1s to .005s, and each fall gets shorter, from .7s on the d to .4s on the F
+  --k: calc(var(--count) - var(--n));
+  animation: fall calc(.7s - var(--k) * .03s) cubic-bezier(.55, 0, .8, .4) forwards;
+  animation-delay: calc(.3s + var(--k) * .1s - var(--k) * var(--k) * .005s);
+
+  @media (prefers-reduced-motion: reduce) {
+    --fall: 1;
+    animation: none;
+  }
 }
 
-.ff .letter.a {
-  transform: rotate(10deg);
+@property --fall {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
 }
 
-.ff .letter.r:nth-child(6) {
-  transform: rotate(10deg) translate(.1em, .1em);
-}
-
-.ff .letter.d {
-  transform: rotate(10deg) translate(.3em, .3em);
+@keyframes fall {
+  to { --fall: 1; }
 }

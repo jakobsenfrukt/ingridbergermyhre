@@ -1,0 +1,25 @@
+.cursor {
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 999999 !important;
+  cursor: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  .cursor {
+    width: 0;
+    height: 0;
+  }
+}
+
+/*.cursor.pointer {
+  opacity: 0 !important;
+}*/
+
+@media (pointer: coarse) {
+  .cursor {
+    display: none;
+    cursor: default;
+  }
+}
