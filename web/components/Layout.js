@@ -1,13 +1,11 @@
-import { useState } from "react";
 import Head from 'next/head';
-import Link from 'next/link';
 import styles from './layout.module.scss';
 import Upcoming from './Upcoming';
 import Contact from './Contact'
-import {PortableText} from '@portabletext/react'
 import Newsletter from "./Newsletter";
 import client from '../client';
 import imageUrlBuilder from '@sanity/image-url';
+import Header from './Header';
 
 const builder = imageUrlBuilder(client);
 function urlFor(source) {
@@ -17,13 +15,6 @@ function urlFor(source) {
 export const siteTitle = 'Ingrid Berger Myhre';
 
 export default function Layout({ children, palette, home, projects, settings, favicon }) {
-  const [showMenu, setShowMenu] = useState(false);
-  function toggleMenu(){
-    setShowMenu(!showMenu);
-  }
-  function closeMenu(){
-    setShowMenu(false);
-  }
 
   return (
     <div id="layout" className={styles.layout} style={{ '--color-palette': palette }}>
@@ -37,19 +28,7 @@ export default function Layout({ children, palette, home, projects, settings, fa
         <meta name="description" content={home.intro} />
       </Head>
 
-      <header id="header" className={styles.header}>
-        <Link href="/"><a className={styles.logo}><h1><span>Ingrid</span> <span>Berger</span> <span>Myhre</span></h1></a></Link>
-        <nav className={styles.siteNav}>
-          <button onClick={toggleMenu} data-label="Show menu" data-show={showMenu}>
-            <span></span>
-          </button>
-          <ul data-show={showMenu}>
-            <li><Link href="/projects">Projects</Link></li>
-            <li><Link href="/about">About</Link></li>
-            <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
-          </ul>
-        </nav>
-      </header>
+      <Header />
 
       <main className={styles.main}>{children}</main>
 

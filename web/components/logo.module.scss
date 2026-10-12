@@ -1,0 +1,61 @@
+.logo {
+  --logo-font-size: 1.8rem;
+  --logo-width: calc(var(--logo-font-size)*13);
+  position: relative;
+  z-index: 1001;
+  text-decoration: none;
+
+  h1 {
+    margin: 0;
+    font-size: var(--logo-font-size);
+    font-weight: normal;
+
+    display: flex;
+    flex-wrap: wrap;
+    width: var(--logo-width);
+
+  }
+}
+
+.ibm, .ff {
+  display: flex;
+  column-gap: .3em;
+}
+
+.ibm {
+  margin: 0 auto 0 0;
+}
+
+
+.ff {
+  margin: 0 0 0 auto;
+}
+
+.o {
+  font-style: italic;
+  transform: scale(-1, 1) translateX(-.1em);
+}
+
+.letter {
+  display: inline-block;
+}
+
+.ff .letter.r:nth-child(3) {
+  transform: rotate(10deg);
+}
+
+.ff .letter.w {
+  transform: rotate(10deg);
+}
+
+.ff .letter.a {
+  transform: rotate(10deg);
+}
+
+.ff .letter.r:nth-child(6) {
+  transform: rotate(10deg) translate(.1em, .1em);
+}
+
+.ff .letter.d {
+  transform: rotate(10deg) translate(.3em, .3em);
+}

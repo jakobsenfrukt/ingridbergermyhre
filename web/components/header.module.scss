@@ -1,0 +1,125 @@
+.header {
+  margin: 0 auto;
+  padding: 1rem var(--spacing-sitepadding);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  top: 0;
+  border-top: 12px solid var(--color-palette);
+  width: 100%;
+  z-index: 1000;
+  font-variation-settings: var(--font-variation-normal);
+  font-size: 1.6rem;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: all 1s ease;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.toggleMenu {
+  position: relative;
+  z-index: 1001;
+  outline: none;
+  border: none;
+  background: rgba(255, 255, 255, 0);
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+
+  span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: currentColor;
+    }
+
+    &:before {
+      top: -.5rem;
+    }
+
+    &:after {
+      bottom: -.5rem;
+    }
+  }
+
+  &[data-show=true] {
+    span {
+      background: rgba(255, 255, 255, 0);
+
+      &:before {
+        top: auto;
+        transform: rotate(-45deg);
+      }
+
+      &:after {
+        bottom: auto;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  display: none;
+}
+
+.navLinks {
+  font-size: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+
+  a {
+    font-size: 1.4rem;
+    font-variation-settings: var(--font-variation-normal);
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .toggleMenu {
+    display: block;
+  }
+
+  .navLinks {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: var(--color-palette);
+    transform: translateX(100%);
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-m);
+    font-size: 2rem;
+    padding: var(--spacing-sitepadding);
+
+    &[data-show=true] {
+      transform: translateX(0);
+    }
+
+    li {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
