@@ -1,3 +1,11 @@
+.layout {
+  cursor: none !important;
+
+  a, button {
+    cursor: none !important;
+  }
+}
+
 .main {
   margin: 0 auto;
   padding: var(--height-header) 0 0;

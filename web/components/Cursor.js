@@ -30,8 +30,8 @@ function Cursor() {
     };
   }, []);
 
-  const flareSize = isPointer ? 0 : 1.5;
-  const cursorStyle = isPointer ? { left: "-100px", top: "-100px" } : {};
+  const flareSize = isPointer ? 1.2 : 1.5;
+  const cursorStyle = isPointer ? {} : {};
 
   return (
     <div
