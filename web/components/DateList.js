@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import styles from './dateList.module.scss'
+import Icon from './Icon';
 
 export function isUpcoming(rawDate) {
   var now = new Date().setHours(0, 0, 0, 0);
@@ -71,8 +72,8 @@ export default function DateList({ dates }) {
               )
           )}
         </ul>
-        {upcomingDates.length > upcomingLimit && <button onClick={showMoreUpcoming} className={styles.showMore}>Show more ({upcomingLimit}/{upcomingDates.length})</button>}
-        {upcomingDates.length > 10 && upcomingDates.length < upcomingLimit && <button onClick={collapseUpcoming} className={styles.showLess}>Show less</button>}
+        {upcomingDates.length > upcomingLimit && <button onClick={showMoreUpcoming} className={styles.showMore}>Show more ({upcomingLimit}/{upcomingDates.length}) <Icon type="arrowDown" /></button>}
+        {upcomingDates.length > 10 && upcomingDates.length < upcomingLimit && <button onClick={collapseUpcoming} className={styles.showLess}>Show less <Icon type="arrowUp" /></button>}
         </div>)}
       {previousDates.length > 0 && (<div><h2>Previously</h2>
         <ul>
@@ -91,8 +92,8 @@ export default function DateList({ dates }) {
               )
           )}
         </ul>
-        {previousDates.length > previousLimit && <button onClick={showMorePrevious} className={styles.showMore}>Show more ({previousLimit}/{previousDates.length})</button>}
-        {previousDates.length > 10 && previousDates.length < previousLimit && <button onClick={collapsePrevious} className={styles.showLess}>Show less</button>}
+        {previousDates.length > previousLimit && <button onClick={showMorePrevious} className={styles.showMore}>Show more ({previousLimit}/{previousDates.length}) <Icon type="arrowDown" /></button>}
+        {previousDates.length > 10 && previousDates.length < previousLimit && <button onClick={collapsePrevious} className={styles.showLess}>Show less <Icon type="arrowUp" /></button>}
         </div>)}
     </div>
   )

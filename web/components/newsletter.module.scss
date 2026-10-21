@@ -58,18 +58,22 @@
     position: relative;
     background: var(--color-palette);
     text-decoration: none;
-    padding: .6em 1.6em;
+    padding: .6em 1em;
+    transition: all .3s ease;
 
-    .icon {
-      display: inline-block;
-      vertical-align: middle;
-      width: 0;
-      overflow: hidden;
+    > svg {
+      position: absolute;
+      top: 50%;
+      right: .6em;
+      opacity: 0;
+      transform: translate(0, -50%);
       transition: all .3s ease;
     }
     &:hover {
-      .icon {
-        width: 1rem;
+      padding-right: 2.6em;
+      > svg {
+        opacity: 1;
+        transform: translate(0, -50%);
       }
     }
   }

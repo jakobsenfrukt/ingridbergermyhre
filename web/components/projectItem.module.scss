@@ -23,8 +23,8 @@
   }
 
   &:hover {
-    .image figure {
-      &:after {
+    .image {
+      .arrow {
         transform: translateX(0);
         opacity: 1;
       }
@@ -85,17 +85,23 @@
   .image {
     grid-column: 1 / span 4;
     margin: 0 3rem;
+    position: relative;
 
     figure {
-      position: relative;
+      img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3/2;
+        object-fit: cover;
+      }
+    }
 
-      &:after {
-        content: "→";
+    .arrow {
         display: block;
         position: absolute;
         z-index: 100;
         top: 0;
-        right: 1.4rem;
+        right: .6rem;
         font-size: 3rem;
         color: var(--color-palette);
         opacity: 0;
@@ -106,14 +112,6 @@
           display: none;
         }
       }
-
-      img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 3/2;
-        object-fit: cover;
-      }
-    }
   }
 
   h2 {

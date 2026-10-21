@@ -4,6 +4,7 @@ import styles from './projectItem.module.scss'
 import Image from './Image'
 import AnimatedTitleSmall from './AnimatedTitleSmall'
 import { useInView } from 'react-intersection-observer'
+import Icon from './Icon'
 
 
 export default function ProjectItem ({ project, small }) {
@@ -20,6 +21,7 @@ export default function ProjectItem ({ project, small }) {
     <li className={`projectItem ${styles.project} ${styles[project.font]}`} style={{ '--color-palette': project.color.hex }} data-small={small} data-inview={ProjectIsInView}>
       <div className={styles.image}>
         {project.image && <Image image={project.image} />}
+        <div className={styles.arrow}><Icon type="arrowRight" /></div>
       </div>
       <h2 className={project.font}>
         <AnimatedTitleSmall content={project.title} width={project.font} />

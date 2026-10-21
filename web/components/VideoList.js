@@ -1,3 +1,4 @@
+import Icon from './Icon'
 import styles from './videoList.module.scss'
 
 export default function VideoList ({ videos }) {
@@ -8,7 +9,7 @@ export default function VideoList ({ videos }) {
         {videos.length > 0 && videos.map(
           (video, index) => (
               <li key={`video-${index}`} className={styles.video}>
-                <h3>{video.title}</h3>
+                <h3>{video.title} <Icon type="arrowRight" /></h3>
                 {video.description && <p>{video.description}</p>}
                 <a href={video.url} target="_blank">
                   <span>Watch {video.title}</span>

@@ -35,11 +35,9 @@
       font-variation-settings: var(--font-variation-wide);
       margin: 0;
       font-size: var(--font-size-s);
-
-      &:after {
-        content: "→";
-        float: right;
-      }
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     p {
       margin: .5rem 0 0;

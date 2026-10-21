@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from './upcoming.module.scss'
 import Link from 'next/link'
 import { isUpcoming } from './DateList.js'
+import Icon from "./Icon.js";
 
 export default function Upcoming({ projects, limit }) {
   const upcomingDates = projects.filter(i => !i.hideUpcoming).map(project => project.dates.map(date => ({
@@ -48,8 +49,8 @@ export default function Upcoming({ projects, limit }) {
             )
         )}
       </ul>
-      {maxLimit && maxLimit < upcomingDates.length && <button onClick={showAll}>&darr; &nbsp; Show full tour list &nbsp; &darr;</button>}
-      {maxLimit === 1000 && <button onClick={collapse}>&uarr; &nbsp; Hide full tour list &nbsp; &uarr;</button>}
+      {maxLimit && maxLimit < upcomingDates.length && <button onClick={showAll}><Icon type="arrowDown" /> Show full tour list <Icon type="arrowDown" /></button>}
+      {maxLimit === 1000 && <button onClick={collapse}><Icon type="arrowUp" /> Hide full tour list <Icon type="arrowUp" /></button>}
     </div>
   )
 }
