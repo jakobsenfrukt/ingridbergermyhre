@@ -12,9 +12,16 @@ const MAX_ROTATE = 12
 
 const clamp = (value, max) => Math.max(-max, Math.min(max, value))
 
+// each page renders its own Layout, so Logo mounts again on every page change.
+// keep where the letters were pushed to, and whether "Foot Forward" has fallen, out here so it carries over
+const saved = { positions: null, fallen: false }
+
+const pushStyle = pos => pos && { '--x': `${pos.x}em`, '--y': `${pos.y}em`, '--r': `${pos.r}deg` }
+
 // --i: letter position in word
 // --n: letter position in string
-function Letters({ text }) {
+// start: index of the first letter among all letters in the logo
+function Letters({ text, start = 0 }) {
   const count = text.replace(/ /g, '').length
   let n = 0
   return text.split(' ').map((word, i) => (
@@ -25,7 +32,7 @@ function Letters({ text }) {
           className={[styles.letter, styles[letter.toLowerCase()]].filter(Boolean).join(' ')}
           style={{ '--i': j + 1, '--n': ++n, '--count': count }}
         >
-          <span className={styles.shy}>{letter}</span>
+          <span className={styles.shy} style={pushStyle(saved.positions?.[start + n - 1])}>{letter}</span>
         </span>
       ))}
     </span>
@@ -34,6 +41,12 @@ function Letters({ text }) {
 
 export default function Logo() {
   const logoRef = useRef(null)
+  // read once, so the class doesn't change when saved.fallen is set below
+  const fallen = useRef(saved.fallen).current
+
+  useEffect(() => {
+    saved.fallen = true
+  }, [])
 
   useEffect(() => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -45,7 +58,7 @@ export default function Logo() {
     const letters = [...logo.querySelectorAll(`.${styles.letter}`)]
     const shys = letters.map(el => el.firstChild)
     // where each letter has been pushed to so far
-    const positions = letters.map(() => ({ x: 0, y: 0, r: 0 }))
+    const positions = saved.positions ||= letters.map(() => ({ x: 0, y: 0, r: 0 }))
     let pointer = null
     let frame = null
 
@@ -77,9 +90,7 @@ export default function Logo() {
           pos.x *= MAX_PUSH / drift
           pos.y *= MAX_PUSH / drift
         }
-        el.style.setProperty('--x', `${pos.x}em`)
-        el.style.setProperty('--y', `${pos.y}em`)
-        el.style.setProperty('--r', `${pos.r}deg`)
+        Object.entries(pushStyle(pos)).forEach(([key, value]) => el.style.setProperty(key, value))
       })
     }
 
@@ -99,10 +110,10 @@ export default function Logo() {
   }, [])
 
   return (
-    <div className={styles.logo} ref={logoRef}>
+    <div className={[styles.logo, fallen && styles.fallen].filter(Boolean).join(' ')} ref={logoRef}>
       <h1>
         <div className={styles.ibm}><Letters text="Ingrid Berger Myhre" /></div>
-        <div className={styles.ff}><Letters text="Foot Forward" /></div>
+        <div className={styles.ff}><Letters text="Foot Forward" start={17} /></div>
       </h1>
     </div>
   )

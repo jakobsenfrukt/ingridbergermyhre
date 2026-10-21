@@ -73,6 +73,12 @@
     --fall: 1;
     animation: none;
   }
+
+  // already fell on an earlier page
+  .fallen & {
+    --fall: 1;
+    animation: none;
+  }
 }
 
 @property --fall {
