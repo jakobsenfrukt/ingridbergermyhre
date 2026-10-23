@@ -106,7 +106,7 @@
         color: var(--color-palette);
         opacity: 0;
         transform: translateX(-2rem);
-        transition: all .6s ease-out;
+        transition: all .3s ease-out;
 
         @media (max-width: 600px) {
           display: none;

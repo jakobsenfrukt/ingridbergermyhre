@@ -76,7 +76,7 @@
 }
 
 .navLinks {
-  font-size: inherit;
+  font-size: var(--font-size-menu);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -84,9 +84,26 @@
   gap: 2rem;
 
   a {
-    font-size: 1.4rem;
+    display: block;
     font-variation-settings: var(--font-variation-normal);
     text-decoration: none;
+
+    &:after {
+      content: "";
+      display: block;
+      background-color: var(--color-palette);
+      width: 100%;
+      height: .1em;
+      margin: .2em 0;
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+    &:hover,
+    &[aria-current=page] {
+      &:after {
+        opacity: 1;
+      }
+    }
   }
 }
 

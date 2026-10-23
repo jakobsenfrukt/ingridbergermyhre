@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 
 // push and rotate letters with cursor
 // cursor distance to trigger movement (em)
-const RADIUS = 4.2
+const RADIUS = 2
 // push and tilt letters (push: em / rotate: deg)
 const PUSH = .1
 const ROTATE = 1.5
