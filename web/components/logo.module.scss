@@ -92,3 +92,9 @@
 @keyframes fall {
   to { --fall: 1; }
 }
+
+@media (max-width: 500px) {
+  .logo {
+    --logo-font-size: 1.4rem;
+  }
+}

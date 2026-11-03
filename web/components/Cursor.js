@@ -38,8 +38,9 @@ function Cursor() {
       className={`${styles.cursor} ${isPointer ? "pointer" : ""}`}
       style={{
         ...cursorStyle,
-        left: `${position.x}px`,
-        top: `${position.y}px`,
+        // move with transform (not left/top) so the dot is only composited, not repainted,
+        // which otherwise can smear the header bar's background below it
+        transform: `translate3d(${position.x}px, ${position.y}px, 0) translate(-50%, -50%)`,
         width: `${flareSize}rem`,
         height: `${flareSize}rem`,
       }}

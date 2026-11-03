@@ -1,7 +1,9 @@
 .cursor {
   position: fixed;
+  top: 0;
+  left: 0;
   pointer-events: none;
-  transform: translate(-50%, -50%);
+  will-change: transform;
   z-index: 999999 !important;
   cursor: none !important;
 }
