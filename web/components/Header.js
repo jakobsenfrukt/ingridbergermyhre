@@ -34,11 +34,11 @@ function MenuToggle({ showMenu, onClick, style }) {
   );
 }
 
-function SiteNav({ isCurrent, showMenu, toggleMenu }) {
+function SiteNav({ isCurrent, showMenu, toggleMenu, showHome }) {
   return (
     <nav className={styles.siteNav}>
       <MenuToggle showMenu={showMenu} onClick={toggleMenu} />
-      <NavLinks className={styles.navLinks} isCurrent={isCurrent} />
+      <NavLinks className={styles.navLinks} isCurrent={isCurrent} showHome={showHome} />
     </nav>
   );
 }
@@ -82,7 +82,7 @@ export default function Header({ }) {
         <button className={styles.toTop} onClick={scrollToTop} aria-label="Scroll to top">
           <Icon type="arrowUp" />
         </button>
-        <SiteNav isCurrent={isCurrent} showMenu={showMenu} toggleMenu={toggleMenu} />
+        <SiteNav isCurrent={isCurrent} showMenu={showMenu} toggleMenu={toggleMenu} showHome />
       </div>
       <nav id="mobile-menu" className={styles.mobileMenu} data-show={showMenu} inert={showMenu ? undefined : ''}>
         <MenuToggle showMenu={showMenu} onClick={closeMenu} style={togglePosition ?? undefined} />
