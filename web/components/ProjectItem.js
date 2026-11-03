@@ -12,7 +12,7 @@ export default function ProjectItem ({ project, small }) {
   const { ref: gradientObserver, inView: ProjectGradientIsInView } = useInView({ triggerOnce: false })
 
   useEffect(() => {
-    if (ProjectGradientIsInView) {
+    if (ProjectGradientIsInView && !small) {
       document.getElementById("layout").style.setProperty('--color-palette', project.color.hex)
     }
   })

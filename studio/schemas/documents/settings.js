@@ -14,6 +14,14 @@ export default {
       }
     },
     {
+      name: 'color',
+      title: 'Fallback color',
+      type: 'color',
+      options: {
+        disableAlpha: true
+      }
+    },
+    {
       title: 'Newsletter',
       name: 'newsletter',
       type: 'object',
