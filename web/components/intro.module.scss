@@ -4,3 +4,11 @@
     max-width: 36em;
   }
 }
+
+@media (max-width: 500px) {
+  .intro {
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+}
